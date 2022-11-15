@@ -1,21 +1,34 @@
 namespace ClassLibaray
 {
 
+    public class DiceRoll
+    {
+        public List<int> rolls = new List<int>();
+        Random Dice = new Random();
+        public int D(int N)
+        {
+            int r = Dice.Next(N) + 1;
+            rolls.Add(r);
+            return r;
+        }
+    }
+
     public class item
     {
-        public string? Name;
-        public string? Stat;
-        public int GP;
-        public int Amount;
+        public string Name = "no name";
+        public string Stat = "missing stat";
+        public int GP = -1;
+        public int Amount = -1;
         public bool Each = false;
 
-        public string? PrefixName;
-        public string? PrefixStat;
-        public int PrefixGP;
+        public string PrefixName = "no prefix";
+        public string PrefixStat = "no prefix stat";
+        public int PrefixGP = -1;
 
-        public string? SuffixName;
-        public string? SuffixStat;
-        public int SuffixGP;
+        public string SuffixName = "no suffix";
+        public string SuffixStat = "no suffix stat";
+        public int SuffixGP = -1;
+        public List<int> rolls = new List<int>();
     }
 
     public class pre
@@ -23,6 +36,7 @@ namespace ClassLibaray
         public string PrefixName = "";
         public string PrefixStat = "";
         public int PrefixGP = 0;
+        public List<int> rolls = new List<int>();
     }
 
     public class suf
@@ -30,6 +44,7 @@ namespace ClassLibaray
         public string SuffixName = "";
         public string SuffixStat = "";
         public int SuffixGP = 0;
+        public List<int> rolls = new List<int>();
     }
 
 }
