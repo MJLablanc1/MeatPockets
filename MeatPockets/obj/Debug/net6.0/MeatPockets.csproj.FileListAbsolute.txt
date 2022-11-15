@@ -1,0 +1,15 @@
+C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\bin\Debug\net6.0\MeatPockets.exe
+C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\bin\Debug\net6.0\MeatPockets.deps.json
+C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\bin\Debug\net6.0\MeatPockets.runtimeconfig.json
+C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\bin\Debug\net6.0\MeatPockets.dll
+C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\bin\Debug\net6.0\MeatPockets.pdb
+C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\obj\Debug\net6.0\MeatPockets.csproj.AssemblyReference.cache
+C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\obj\Debug\net6.0\MeatPockets.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\obj\Debug\net6.0\MeatPockets.AssemblyInfoInputs.cache
+C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\obj\Debug\net6.0\MeatPockets.AssemblyInfo.cs
+C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\obj\Debug\net6.0\MeatPockets.csproj.CoreCompileInputs.cache
+C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\obj\Debug\net6.0\MeatPockets.dll
+C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\obj\Debug\net6.0\refint\MeatPockets.dll
+C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\obj\Debug\net6.0\MeatPockets.pdb
+C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\obj\Debug\net6.0\MeatPockets.genruntimeconfig.cache
+C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\obj\Debug\net6.0\ref\MeatPockets.dll
