@@ -5,116 +5,117 @@ namespace Suffix
     class suffix
     {
         public static DiceRoll Dice = new DiceRoll();
-        public static suf Suffixes(int s, int CR)
+        public static suf Suffixes(int Suffix_Dice, int Suffix_Mod, int CR)
         {
-            suf suf = new suf();
-            int a = Dice.D(20) + CR;
-            if (s <= 20)
+            int Suffix_Roll = Dice.D(Suffix_Dice) + Suffix_Mod;
+            suf suf = new suf();;
+            if (Suffix_Roll <= 20)
             {
                 //Reduces damage taken
+                int reduce = Dice.D(20) + CR;
 
             } //Reduces damage taken
-            else if (s <= 25)
+            else if (Suffix_Roll <= 25)
             {
                 //Has an effect when attacked
 
             } //Has an effect when attacked
-            else if (s <= 27)
+            else if (Suffix_Roll <= 27)
             {
                 //Improved durability
 
             } //Improved durability
-            else if (s <= 30)
+            else if (Suffix_Roll <= 30)
             {
                 //Affects movement
 
             } //Affects movement
-            else if (s <= 35)
+            else if (Suffix_Roll <= 35)
             {
                 //Increases hit points
 
             } //Increases hit points
-            else if (s <= 45)
+            else if (Suffix_Roll <= 45)
             {
                 //Increases ability scores
 
             } //Increases ability scores
-            else if (s <= 49)
+            else if (Suffix_Roll <= 49)
             {
                 //Cursed
 
             } //Cursed
-            else if (s <= 53)
+            else if (Suffix_Roll <= 53)
             {
                 //Improves recovery
 
             } //Improves recovery
-            else if (s <= 56)
+            else if (Suffix_Roll <= 56)
             {
                 //Affects spell preparation
 
             } //Affects spell preparation
-            else if (s <= 60)
+            else if (Suffix_Roll <= 60)
             {
                 //Affects spell casting in combat
 
             } //Affects spell casting in combat
-            else if (s <= 63)
+            else if (Suffix_Roll <= 63)
             {
                 //Improves treasure finding
 
             } //Improves treasure finding
-            else if (s <= 67)
+            else if (Suffix_Roll <= 67)
             {
                 //Improves light sources
 
             } //Improves light sources
-            else if (s <= 70)
+            else if (Suffix_Roll <= 70)
             {
                 //Reduces effects of hazards
 
             } //Reduces effects or hazards
-            else if (s <= 73)
+            else if (Suffix_Roll <= 73)
             {
                 //Increases damage
 
             } //Increases damage
-            else if (s <= 75)
+            else if (Suffix_Roll <= 75)
             {
                 //Improves minimum damage
 
             } //Improves minimum damage
-            else if (s <= 77)
+            else if (Suffix_Roll <= 77)
             {
                 //Affects attack speed
 
             } //Affects attack speed
-            else if (s <= 80)
+            else if (Suffix_Roll <= 80)
             {
                 //Adds effects to damaged foe
 
             } //Adds effects to damaged foe
-            else if (s <= 82)
+            else if (Suffix_Roll <= 82)
             {
                 //Restores on a successful hit
 
             } //Restores on a successful hit
-            else if (s <= 84)
+            else if (Suffix_Roll <= 84)
             {
                 //Causes damage to armor or weapons
 
             } //Causes damage to armor or weapons
-            else if (s <= 85)
+            else if (Suffix_Roll <= 85)
             {
                 //Affects weapon proficiences
 
             } //Affects weapon proficiences
-            else if (s <= 90)
+            else if (Suffix_Roll <= 90)
             {
                 //Affects available uses
 
             } //Affects available uses
-            else if (s <= 100)
+            else if (Suffix_Roll <= 100)
             {
                 //Allows the casting of a spell
 

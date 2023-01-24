@@ -6,1062 +6,1089 @@ using Extras;
 namespace BaseItem
 {
     public class baseItem
-    {     
+    {
 
-        public static item Item(int i, string q, int CR)
+        public static item Item(int Item_Roll, string q, int CR)
         {
-            int Prefix = 0;
-            int Suffix = 0;
-            item tre = new item();
+            int Prefix_Dice = 0;
+            int Prefix_Mod = 0;
+            int Suffix_Dice = 0;
+            int Suffix_Mod = 0;
+            item Treasure = new item();
             DiceRoll Dice = new DiceRoll();
 
-            if (i < 8)
+            if (Item_Roll < 8)
             {
                 //Body Armor ---------------------------------------------------------------------------------------------------------------------------------
-                int b = Dice.D(20) + CR;
+                int Body_Armor = Dice.D(20) + CR;
 
-                if (b <= 3)
+                if (Body_Armor <= 3)
                 {
-                    tre.Name = "Rags";
-                    tre.Stat = "+1 AC (-1 Char checks";
-                    tre.GP = 1;
+                    Treasure.Name = "Rags";
+                    Treasure.Stat = "+1 AC (-1 Char checks";
+                    Treasure.GP = 1;
                 }
-                else if (b <= 5)
+                else if (Body_Armor <= 5)
                 {
-                    tre.Name = "Cape";
-                    tre.Stat = "+1 AC";
-                    tre.GP = 5;
+                    Treasure.Name = "Cape";
+                    Treasure.Stat = "+1 AC";
+                    Treasure.GP = 5;
                 }
-                else if (b <= 7)
+                else if (Body_Armor <= 7)
                 {
-                    tre.Name = "Cloak";
-                    tre.Stat = "+1 AC";
-                    tre.GP = 15;
+                    Treasure.Name = "Cloak";
+                    Treasure.Stat = "+1 AC";
+                    Treasure.GP = 15;
                 }
-                else if (b <= 11)
+                else if (Body_Armor <= 11)
                 {
-                    tre.Name = "Robe";
-                    tre.Stat = "+1 AC";
-                    tre.GP = 20;
+                    Treasure.Name = "Robe";
+                    Treasure.Stat = "+1 AC";
+                    Treasure.GP = 20;
                 }
-                else if (b <= 14)
+                else if (Body_Armor <= 14)
                 {
-                    tre.Name = "Quilted Armor";
-                    tre.Stat = "+1 AC";
-                    tre.GP = 25;
+                    Treasure.Name = "Quilted Armor";
+                    Treasure.Stat = "+1 AC";
+                    Treasure.GP = 25;
                 }
-                else if (b <= 16)
+                else if (Body_Armor <= 16)
                 {
-                    tre.Name = "Leather Armor";
-                    tre.Stat = "+2 AC";
-                    tre.GP = 30;
+                    Treasure.Name = "Leather Armor";
+                    Treasure.Stat = "+2 AC";
+                    Treasure.GP = 30;
                 }
-                else if (b <= 18)
+                else if (Body_Armor <= 18)
                 {
-                    tre.Name = "Hard Leather Armor";
-                    tre.Stat = "+3 AC";
-                    tre.GP = 40;
+                    Treasure.Name = "Hard Leather Armor";
+                    Treasure.Stat = "+3 AC";
+                    Treasure.GP = 40;
                 }
-                else if (b <= 21)
+                else if (Body_Armor <= 21)
                 {
-                    tre.Name = "Studded Leather Armor";
-                    tre.Stat = "+3 AC";
-                    tre.GP = 50;
+                    Treasure.Name = "Studded Leather Armor";
+                    Treasure.Stat = "+3 AC";
+                    Treasure.GP = 50;
                 }
-                else if (b <= 23)
+                else if (Body_Armor <= 23)
                 {
-                    tre.Name = "Ring Mail";
-                    tre.Stat = "+4 AC";
-                    tre.GP = 100;
+                    Treasure.Name = "Ring Mail";
+                    Treasure.Stat = "+4 AC";
+                    Treasure.GP = 100;
                 }
-                else if (b <= 25)
+                else if (Body_Armor <= 25)
                 {
-                    tre.Name = "Scale Mail";
-                    tre.Stat = "+4 AC";
-                    tre.GP = 120;
+                    Treasure.Name = "Scale Mail";
+                    Treasure.Stat = "+4 AC";
+                    Treasure.GP = 120;
                 }
-                else if (b <= 27)
+                else if (Body_Armor <= 27)
                 {
-                    tre.Name = "Chain Mail";
-                    tre.Stat = "+5 AC";
-                    tre.GP = 150;
+                    Treasure.Name = "Chain Mail";
+                    Treasure.Stat = "+5 AC";
+                    Treasure.GP = 150;
                 }
-                else if (b == 28)
+                else if (Body_Armor == 28)
                 {
-                    tre.Name = "Breast Plate";
-                    tre.Stat = "+5 AC";
-                    tre.GP = 200;
+                    Treasure.Name = "Breast Plate";
+                    Treasure.Stat = "+5 AC";
+                    Treasure.GP = 200;
                 }
-                else if (b <= 30)
+                else if (Body_Armor <= 30)
                 {
-                    tre.Name = "Splint Mail";
-                    tre.Stat = "+6 AC";
-                    tre.GP = 250;
+                    Treasure.Name = "Splint Mail";
+                    Treasure.Stat = "+6 AC";
+                    Treasure.GP = 250;
                 }
-                else if (b <= 32)
+                else if (Body_Armor <= 32)
                 {
-                    tre.Name = "Plate Mail";
-                    tre.Stat = "+7 AC";
-                    tre.GP = 600;
+                    Treasure.Name = "Plate Mail";
+                    Treasure.Stat = "+7 AC";
+                    Treasure.GP = 600;
                 }
-                else if (b == 33)
+                else if (Body_Armor == 33)
                 {
-                    tre.Name = "Field Plate";
-                    tre.Stat = "+8 AC";
-                    tre.GP = 2000;
+                    Treasure.Name = "Field Plate";
+                    Treasure.Stat = "+8 AC";
+                    Treasure.GP = 2000;
                 }
-                else if (b == 34)
+                else if (Body_Armor == 34)
                 {
-                    tre.Name = "Ancient Armor";
-                    tre.Stat = "+9 AC, absorbs 1 point of damage per attack";
-                    tre.GP = 3750;
+                    Treasure.Name = "Ancient Armor";
+                    Treasure.Stat = "+9 AC, absorbs 1 point of damage per attack";
+                    Treasure.GP = 3750;
                 }
-                else if (b == 35)
+                else if (Body_Armor == 35)
                 {
-                    tre.Name = "Gothic Plate";
-                    tre.Stat = "+10 AC";
-                    tre.GP = 4000;
+                    Treasure.Name = "Gothic Plate";
+                    Treasure.Stat = "+10 AC";
+                    Treasure.GP = 4000;
                 }
-                else if (b >= 36)
+                else if (Body_Armor >= 36)
                 {
-                    tre.Name = "Full Plate Mail";
-                    tre.Stat = "+11 AC";
-                    tre.GP = 5000;
+                    Treasure.Name = "Full Plate Mail";
+                    Treasure.Stat = "+11 AC";
+                    Treasure.GP = 5000;
                 }
-                Prefix = Dice.D(60);
-                Suffix = Dice.D(60);
+                Prefix_Dice = 60;
+                Suffix_Dice =60;
             }                //Body Armor
-            if (i > 8 && i < 14)
+            if (Item_Roll > 8 && Item_Roll < 14)
             {
                 //Head Protection ---------------------------------------------------------------------------------------------------------------------------------
-                int h = Dice.D(20) + CR;
-                if (h <= 10)
+                int Head_Piece = Dice.D(20) + CR;
+                if (Head_Piece <= 10)
                 {
-                    tre.Name = "Cap";
-                    tre.Stat = "+1 AC (not cumulative with any protection)";
-                    tre.GP = 5;
+                    Treasure.Name = "Cap";
+                    Treasure.Stat = "+1 AC (not cumulative with any protection)";
+                    Treasure.GP = 5;
                 }
-                else if (h <= 14)
+                else if (Head_Piece <= 14)
                 {
-                    tre.Name = "Skull Cap";
-                    tre.Stat = "+1 AC (not cumulative with armor)";
-                    tre.GP = 10;
+                    Treasure.Name = "Skull Cap";
+                    Treasure.Stat = "+1 AC (not cumulative with armor)";
+                    Treasure.GP = 10;
                 }
-                else if (h <= 18)
+                else if (Head_Piece <= 18)
                 {
-                    tre.Name = "Helm";
-                    tre.Stat = "+1 AC (not cumulative with armor)";
-                    tre.GP = 15;
+                    Treasure.Name = "Helm";
+                    Treasure.Stat = "+1 AC (not cumulative with armor)";
+                    Treasure.GP = 15;
                 }
-                else if (h <= 20)
+                else if (Head_Piece <= 20)
                 {
-                    tre.Name = "Mask";
-                    tre.Stat = "+1 AC (not cumulative with armor)";
-                    tre.GP = 20;
+                    Treasure.Name = "Mask";
+                    Treasure.Stat = "+1 AC (not cumulative with armor)";
+                    Treasure.GP = 20;
                 }
-                else if (h <= 25)
+                else if (Head_Piece <= 25)
                 {
-                    tre.Name = "Full Helm";
-                    tre.Stat = "+2 AC (not cumulative with armor)";
-                    tre.GP = 30;
+                    Treasure.Name = "Full Helm";
+                    Treasure.Stat = "+2 AC (not cumulative with armor)";
+                    Treasure.GP = 30;
                 }
-                else if (h <= 29)
+                else if (Head_Piece <= 29)
                 {
-                    tre.Name = "Crown";
-                    tre.Stat = "+3 AC (not cumulative with armor)";
-                    tre.GP = 50;
+                    Treasure.Name = "Crown";
+                    Treasure.Stat = "+3 AC (not cumulative with armor)";
+                    Treasure.GP = 50;
                 }
-                else if (h <= 32)
+                else if (Head_Piece <= 32)
                 {
-                    tre.Name = "Bone Helm";
-                    tre.Stat = "+3 AC (not cumulative with armor)";
-                    tre.GP = 100;
+                    Treasure.Name = "Bone Helm";
+                    Treasure.Stat = "+3 AC (not cumulative with armor)";
+                    Treasure.GP = 100;
                 }
-                else if (h >= 33)
+                else if (Head_Piece >= 33)
                 {
-                    tre.Name = "Great Helm";
-                    tre.Stat = "+4 AC (not cumulative with armor)";
-                    tre.GP = 150;
+                    Treasure.Name = "Great Helm";
+                    Treasure.Stat = "+4 AC (not cumulative with armor)";
+                    Treasure.GP = 150;
                 }
-                Prefix = Dice.D(60);
-                Suffix = Dice.D(60);
+                Prefix_Dice = 60;
+                Suffix_Dice = 60;
             }      //Head Protection
-            if (i > 13 && i < 17)
+            if (Item_Roll > 13 && Item_Roll < 17)
             {
                 //Foot Proctection ---------------------------------------------------------------------------------------------------------------------------------
-                int f = Dice.D(20) + CR;
+                int Foot_Piece = Dice.D(20) + CR;
 
-                if (f <= 12)
+                if (Foot_Piece <= 12)
                 {
-                    tre.Name = "Leather Boots";
-                    tre.Stat = "+1 AC (not cumulative with any protection/armor)";
-                    tre.GP = 5;
+                    Treasure.Name = "Leather Boots";
+                    Treasure.Stat = "+1 AC (not cumulative with any protection/armor)";
+                    Treasure.GP = 5;
                 }
-                else if (f <= 21)
+                else if (Foot_Piece <= 21)
                 {
-                    tre.Name = "Heavy Boots";
-                    tre.Stat = "+1 AC (not cumulative with armor)";
-                    tre.GP = 10;
+                    Treasure.Name = "Heavy Boots";
+                    Treasure.Stat = "+1 AC (not cumulative with armor)";
+                    Treasure.GP = 10;
                 }
-                else if (f <= 27)
+                else if (Foot_Piece <= 27)
                 {
-                    tre.Name = "Chain Boots";
-                    tre.Stat = "+1 AC (not cumulative with armor)";
-                    tre.GP = 15;
+                    Treasure.Name = "Chain Boots";
+                    Treasure.Stat = "+1 AC (not cumulative with armor)";
+                    Treasure.GP = 15;
                 }
-                else if (f <= 32)
+                else if (Foot_Piece <= 32)
                 {
-                    tre.Name = "Light Plate Boots";
-                    tre.Stat = "+1 AC (not cumulative with armor)";
-                    tre.GP = 20;
+                    Treasure.Name = "Light Plate Boots";
+                    Treasure.Stat = "+1 AC (not cumulative with armor)";
+                    Treasure.GP = 20;
                 }
-                else if (f >= 33)
+                else if (Foot_Piece >= 33)
                 {
-                    tre.Name = "Greaves";
-                    tre.Stat = "+2 AC (not cumulative with armor)";
-                    tre.GP = 30;
+                    Treasure.Name = "Greaves";
+                    Treasure.Stat = "+2 AC (not cumulative with armor)";
+                    Treasure.GP = 30;
                 }
-                Prefix = Dice.D(60);
-                Suffix = Dice.D(60);
+                Prefix_Dice = 60;
+                Suffix_Dice = 60;
             }     //Foot Protection
-            if (i > 16 && i < 19)
+            if (Item_Roll > 16 && Item_Roll < 19)
             {
                 //Hand Proctection -----------------------------------------------------------------------------------------------------------------------
-                int h = Dice.D(20) + CR;
+                int Hand_Piece = Dice.D(20) + CR;
 
-                if (h <= 12)
+                if (Hand_Piece <= 12)
                 {
-                    tre.Name = "Gloves";
-                    tre.Stat = "+1 AC (not cumulative with any protection)";
-                    tre.GP = 5;
+                    Treasure.Name = "Gloves";
+                    Treasure.Stat = "+1 AC (not cumulative with any protection)";
+                    Treasure.GP = 5;
                 }
-                else if (h <= 21)
+                else if (Hand_Piece <= 21)
                 {
-                    tre.Name = "Heavy Gloves";
-                    tre.Stat = "+1 AC (not cumulative with armor or shield)";
-                    tre.GP = 10;
+                    Treasure.Name = "Heavy Gloves";
+                    Treasure.Stat = "+1 AC (not cumulative with armor or shield)";
+                    Treasure.GP = 10;
                 }
-                else if (h <= 27)
+                else if (Hand_Piece <= 27)
                 {
-                    tre.Name = "Chain Gloves";
-                    tre.Stat = "+1 AC (not cumulative with armor or shield)";
-                    tre.GP = 15;
+                    Treasure.Name = "Chain Gloves";
+                    Treasure.Stat = "+1 AC (not cumulative with armor or shield)";
+                    Treasure.GP = 15;
                 }
-                else if (h <= 32)
+                else if (Hand_Piece <= 32)
                 {
-                    tre.Name = "Light Gauntlets";
-                    tre.Stat = "+1 AC (not cumulative with armor or shield)";
-                    tre.GP = 20;
+                    Treasure.Name = "Light Gauntlets";
+                    Treasure.Stat = "+1 AC (not cumulative with armor or shield)";
+                    Treasure.GP = 20;
                 }
-                else if (h >= 33)
+                else if (Hand_Piece >= 33)
                 {
-                    tre.Name = "Gauntlets";
-                    tre.Stat = "+2 AC (not cumulative with armor or shield)";
-                    tre.GP = 30;
+                    Treasure.Name = "Gauntlets";
+                    Treasure.Stat = "+2 AC (not cumulative with armor or shield)";
+                    Treasure.GP = 30;
                 }
-                Prefix = Dice.D(60);
-                Suffix = Dice.D(60);
+                Prefix_Dice = 60;
+                Suffix_Dice = 60;
             }     //Hand Protection
-            if (i > 18 && i < 21)
+            if (Item_Roll > 18 && Item_Roll < 21)
             {
                 //Belts ---------------------------------------------------------------------------------------------------------------------------------
-                int b = Dice.D(20) + CR;
-                if (b <= 12)
+                int Belt = Dice.D(20) + CR;
+                if (Belt <= 12)
                 {
-                    tre.Name = "Sash";
-                    tre.Stat = "+1 AC (not cumulative with any protection/armor)";
-                    tre.GP = 5;
+                    Treasure.Name = "Sash";
+                    Treasure.Stat = "+1 AC (not cumulative with any protection/armor)";
+                    Treasure.GP = 5;
                 }
-                else if (b <= 21)
+                else if (Belt <= 21)
                 {
-                    tre.Name = "Light Belt";
-                    tre.Stat = "+1 AC (not cumulative with armor)";
-                    tre.GP = 10;
+                    Treasure.Name = "Light Belt";
+                    Treasure.Stat = "+1 AC (not cumulative with armor)";
+                    Treasure.GP = 10;
                 }
-                else if (b <= 27)
+                else if (Belt <= 27)
                 {
-                    tre.Name = "Belt";
-                    tre.Stat = "+1 AC (not cumulative with armor)";
-                    tre.GP = 15;
+                    Treasure.Name = "Belt";
+                    Treasure.Stat = "+1 AC (not cumulative with armor)";
+                    Treasure.GP = 15;
                 }
-                else if (b <= 32)
+                else if (Belt <= 32)
                 {
-                    tre.Name = "Heavy Belt";
-                    tre.Stat = "+1 AC (not cumulative with armor)";
-                    tre.GP = 20;
+                    Treasure.Name = "Heavy Belt";
+                    Treasure.Stat = "+1 AC (not cumulative with armor)";
+                    Treasure.GP = 20;
                 }
-                else if (b >= 33)
+                else if (Belt >= 33)
                 {
-                    tre.Name = "Plate Belt";
-                    tre.Stat = "+2 AC (not cumulative with armor)";
-                    tre.GP = 30;
+                    Treasure.Name = "Plate Belt";
+                    Treasure.Stat = "+2 AC (not cumulative with armor)";
+                    Treasure.GP = 30;
                 }
-                Prefix = Dice.D(60);
-                Suffix = Dice.D(60);
+                Prefix_Dice = 60;
+                Suffix_Dice = 60;
             }     //Belts
-            if (i > 20 && i < 26)
+            if (Item_Roll > 20 && Item_Roll < 26)
             {
                 //Shields ---------------------------------------------------------------------------------------------------------------------------------
-                int s = Dice.D(20) + CR;
-                if (s <= 10)
+                int Shield = Dice.D(20) + CR;
+                if (Shield <= 10)
                 {
-                    tre.Name = "Buckler";
-                    tre.Stat = "+1 AC (negates hand protection)";
-                    tre.GP = 10;
+                    Treasure.Name = "Buckler";
+                    Treasure.Stat = "+1 AC (negates hand protection)";
+                    Treasure.GP = 10;
                 }
-                else if (s <= 16)
+                else if (Shield <= 16)
                 {
-                    tre.Name = "Small Shield";
-                    tre.Stat = "+1 AC (negates hand protection)";
-                    tre.GP = 15;
+                    Treasure.Name = "Small Shield";
+                    Treasure.Stat = "+1 AC (negates hand protection)";
+                    Treasure.GP = 15;
                 }
-                else if (s <= 21)
+                else if (Shield <= 21)
                 {
-                    tre.Name = "Large Shield";
-                    tre.Stat = "+2 AC (negates hand protection)";
-                    tre.GP = 20;
+                    Treasure.Name = "Large Shield";
+                    Treasure.Stat = "+2 AC (negates hand protection)";
+                    Treasure.GP = 20;
                 }
-                else if (s <= 25)
+                else if (Shield <= 25)
                 {
-                    tre.Name = "Kite Shield";
-                    tre.Stat = "+3 AC (negates hand protection)";
-                    tre.GP = 50;
+                    Treasure.Name = "Kite Shield";
+                    Treasure.Stat = "+3 AC (negates hand protection)";
+                    Treasure.GP = 50;
                 }
-                else if (s <= 27)
+                else if (Shield <= 27)
                 {
-                    tre.Name = "Spiked Shield";
-                    tre.Stat = "+3 AC (used as a 1d6 (x2) piercing weapon; negates hand protection)";
-                    tre.GP = 100;
+                    Treasure.Name = "Spiked Shield";
+                    Treasure.Stat = "+3 AC (used as a 1d6 (x2) piercing weapon; negates hand protection)";
+                    Treasure.GP = 100;
                 }
-                else if (s <= 29)
+                else if (Shield <= 29)
                 {
-                    tre.Name = "Bone Shield";
-                    tre.Stat = "+3 AC (negates hand protection)";
-                    tre.GP = 150;
+                    Treasure.Name = "Bone Shield";
+                    Treasure.Stat = "+3 AC (negates hand protection)";
+                    Treasure.GP = 150;
                 }
-                else if (s <= 32)
+                else if (Shield <= 32)
                 {
-                    tre.Name = "Tower Shield (small)";
-                    tre.Stat = "+4 AC (negates hand protection)";
-                    tre.GP = 250;
+                    Treasure.Name = "Tower Shield (small)";
+                    Treasure.Stat = "+4 AC (negates hand protection)";
+                    Treasure.GP = 250;
                 }
-                else if (s <= 33)
+                else if (Shield <= 33)
                 {
-                    tre.Name = "Gothic Shield";
-                    tre.Stat = "+2 AC (negates hand protection)";
-                    tre.GP = 500;
+                    Treasure.Name = "Gothic Shield";
+                    Treasure.Stat = "+2 AC (negates hand protection)";
+                    Treasure.GP = 500;
                 }
-                Prefix = Dice.D(60);
-                Suffix = Dice.D(60);
+                Prefix_Dice = 60;
+                Suffix_Dice = 60;
             }     //Shields
-            if (26 <= i && i <= 30)
+            if (26 <= Item_Roll && Item_Roll <= 30)
             {
                 //Dagger ---------------------------------------------------------------------------------------------------------------------------------
                 int d = Dice.D(20) + CR;
                 if (d <= 10)
                 {
                     int a = Dice.D(6) + Dice.D(6);
-                    tre.Name = $"{a} Throwing Knifes";
-                    tre.Stat = "1d3, crit 19-20/x2, 1 lb., Small, Piercing";
-                    tre.GP = 2;
-                    tre.Each = true;
-                    tre.Amount = a;
+                    Treasure.Name = $"{a} Throwing Knifes";
+                    Treasure.Stat = "1d3, crit 19-20/x2, 1 lb., Small, Piercing";
+                    Treasure.GP = 2;
+                    Treasure.Each = true;
+                    Treasure.Amount = a;
                 }
                 else if (d <= 15)
                 {
-                    tre.Name = "Dagger";
-                    tre.Stat = "1d4, crit 19-20/x2, 1 lb., Tiny, Piercing";
-                    tre.GP = 5;
+                    Treasure.Name = "Dagger";
+                    Treasure.Stat = "1d4, crit 19-20/x2, 1 lb., Tiny, Piercing";
+                    Treasure.GP = 5;
                 }
                 else if (d <= 17)
                 {
-                    tre.Name = "Dirk";
-                    tre.Stat = "1d4, crit 19-20/x2, 2 lbs., Small, Piercing/Slashing";
-                    tre.GP = 10;
+                    Treasure.Name = "Dirk";
+                    Treasure.Stat = "1d4, crit 19-20/x2, 2 lbs., Small, Piercing/Slashing";
+                    Treasure.GP = 10;
                 }
                 else if (d <= 21)
                 {
-                    tre.Name = "Kris";
-                    tre.Stat = "1d4, crit 19-20/x2, 2 lbs., Tiny, Piercing";
-                    tre.GP = 15;
+                    Treasure.Name = "Kris";
+                    Treasure.Stat = "1d4, crit 19-20/x2, 2 lbs., Tiny, Piercing";
+                    Treasure.GP = 15;
                 }
                 else if (d <= 32)
                 {
                     int a = Dice.D(6) + Dice.D(6);
-                    tre.Name = $"{a} Balanced Knife";
-                    tre.Stat = "1d4, crit 19-20/x2, 1 lb., Small, Piercing";
-                    tre.GP = 3;
-                    tre.Each = true;
-                    tre.Amount = a;
+                    Treasure.Name = $"{a} Balanced Knife";
+                    Treasure.Stat = "1d4, crit 19-20/x2, 1 lb., Small, Piercing";
+                    Treasure.GP = 3;
+                    Treasure.Each = true;
+                    Treasure.Amount = a;
                 }
                 else if (d >= 33)
                 {
-                    tre.Name = "Blade";
-                    tre.Stat = "1d6, crit 19-20/x2, 2 lbs., Small, Piercing/Slashing";
-                    tre.GP = 20;
+                    Treasure.Name = "Blade";
+                    Treasure.Stat = "1d6, crit 19-20/x2, 2 lbs., Small, Piercing/Slashing";
+                    Treasure.GP = 20;
                 }
-                Prefix = Dice.D(60) + 25;
-                Suffix = Dice.D(60) + 25;
+                Prefix_Dice = 60;
+                Prefix_Mod = 25;
+                Suffix_Dice = 60;
+                Suffix_Mod = 25;
             }   //Daggers
-            if (31 <= i && i <= 40)
+            if (31 <= Item_Roll && Item_Roll <= 40)
             {
                 //Sword ---------------------------------------------------------------------------------------------------------------------------------
-                int s = Dice.D(20) + CR;
-                if (s <= 4)
+                int Sword = Dice.D(20) + CR;
+                if (Sword <= 4)
                 {
-                    tre.Name = "Short Sword";
-                    tre.Stat = "1d6, crit 19-20/x2, 3 lbs., Small, Piercing";
-                    tre.GP = 10;
+                    Treasure.Name = "Short Sword";
+                    Treasure.Stat = "1d6, crit 19-20/x2, 3 lbs., Small, Piercing";
+                    Treasure.GP = 10;
                 }
-                else if (s <= 7)
+                else if (Sword <= 7)
                 {
-                    tre.Name = "Saber";
-                    tre.Stat = "1d6, crit 19-20/x2, 4 lbs., Medium, Slashing";
-                    tre.GP = 30;
+                    Treasure.Name = "Saber";
+                    Treasure.Stat = "1d6, crit 19-20/x2, 4 lbs., Medium, Slashing";
+                    Treasure.GP = 30;
                 }
-                else if (s <= 10)
+                else if (Sword <= 10)
                 {
-                    tre.Name = "Scimitar";
-                    tre.Stat = "1d6, crit 18-20/x2, 4 lbs., Medium, Slashing";
-                    tre.GP = 20;
+                    Treasure.Name = "Scimitar";
+                    Treasure.Stat = "1d6, crit 18-20/x2, 4 lbs., Medium, Slashing";
+                    Treasure.GP = 20;
                 }
-                else if (s <= 13)
+                else if (Sword <= 13)
                 {
-                    tre.Name = "Falchion";
-                    tre.Stat = "1d6, crit 18-20/x2, 6 lbs., Medium, Slashing";
-                    tre.GP = 35;
+                    Treasure.Name = "Falchion";
+                    Treasure.Stat = "1d6, crit 18-20/x2, 6 lbs., Medium, Slashing";
+                    Treasure.GP = 35;
                 }
-                else if (s <= 15)
+                else if (Sword <= 15)
                 {
-                    tre.Name = "Broad Sword";
-                    tre.Stat = "1d8, crit 19-20/x2, 4 lbs., Medium, Slashing";
-                    tre.GP = 75;
+                    Treasure.Name = "Broad Sword";
+                    Treasure.Stat = "1d8, crit 19-20/x2, 4 lbs., Medium, Slashing";
+                    Treasure.GP = 75;
                 }
-                else if (s <= 17)
+                else if (Sword <= 17)
                 {
-                    tre.Name = "Longsword";
-                    tre.Stat = "1d8, crit 19-20/x2, 4 lbs., Medium, Slashing";
-                    tre.GP = 100;
+                    Treasure.Name = "Longsword";
+                    Treasure.Stat = "1d8, crit 19-20/x2, 4 lbs., Medium, Slashing";
+                    Treasure.GP = 100;
                 }
-                else if (s <= 18)
+                else if (Sword <= 18)
                 {
-                    tre.Name = "Crystal Sword";
-                    tre.Stat = "1d8, crit 18-20/x3, 5 lbs., Medium, Slashing";
-                    tre.GP = 150;
+                    Treasure.Name = "Crystal Sword";
+                    Treasure.Stat = "1d8, crit 18-20/x3, 5 lbs., Medium, Slashing";
+                    Treasure.GP = 150;
                 }
-                else if (s <= 20)
+                else if (Sword <= 20)
                 {
-                    tre.Name = "Claymore 2H";
-                    tre.Stat = "1d10, crit 19-20/x2, 15 lbs., Large, Slashing";
-                    tre.GP = 150;
+                    Treasure.Name = "Claymore 2H";
+                    Treasure.Stat = "1d10, crit 19-20/x2, 15 lbs., Large, Slashing";
+                    Treasure.GP = 150;
                 }
-                else if (s <= 24)
+                else if (Sword <= 24)
                 {
-                    tre.Name = "Two-Handed Sword 2H";
-                    tre.Stat = "1d10, crit 19-20/x2, 15 lbs., Large, Slashing";
-                    tre.GP = 175;
+                    Treasure.Name = "Two-Handed Sword 2H";
+                    Treasure.Stat = "1d10, crit 19-20/x2, 15 lbs., Large, Slashing";
+                    Treasure.GP = 175;
                 }
-                else if (s <= 26)
+                else if (Sword <= 26)
                 {
-                    tre.Name = "War Sword";
-                    tre.Stat = "1d10, crit 19-20/x2, 4 lbs., Medium, Slashing";
-                    tre.GP = 200;
+                    Treasure.Name = "War Sword";
+                    Treasure.Stat = "1d10, crit 19-20/x2, 4 lbs., Medium, Slashing";
+                    Treasure.GP = 200;
                 }
-                else if (s <= 28)
+                else if (Sword <= 28)
                 {
-                    tre.Name = "Giant Sword 2H";
-                    tre.Stat = "2d6, crit 19-20/x2, 15 lbs., Large, Slashing";
-                    tre.GP = 250;
+                    Treasure.Name = "Giant Sword 2H";
+                    Treasure.Stat = "2d6, crit 19-20/x2, 15 lbs., Large, Slashing";
+                    Treasure.GP = 250;
                 }
-                else if (s <= 30)
+                else if (Sword <= 30)
                 {
-                    tre.Name = "Bastard Sword 2H";
-                    tre.Stat = "2d6, crit 19-20/x2, 10 lbs., Large, Slashing";
-                    tre.GP = 250;
+                    Treasure.Name = "Bastard Sword 2H";
+                    Treasure.Stat = "2d6, crit 19-20/x2, 10 lbs., Large, Slashing";
+                    Treasure.GP = 250;
                 }
-                else if (s <= 32)
+                else if (Sword <= 32)
                 {
-                    tre.Name = "Flamberge 2H";
-                    tre.Stat = "2d8, crit 19-20/x2, 15 lbs., Large, Slashing";
-                    tre.GP = 300;
+                    Treasure.Name = "Flamberge 2H";
+                    Treasure.Stat = "2d8, crit 19-20/x2, 15 lbs., Large, Slashing";
+                    Treasure.GP = 300;
                 }
-                else if (s >= 33)
+                else if (Sword >= 33)
                 {
-                    tre.Name = "Great Sword 2H";
-                    tre.Stat = "2d10, crit 19-20/x2, 15 lbs., Large, Slashing";
-                    tre.GP = 500;
+                    Treasure.Name = "Great Sword 2H";
+                    Treasure.Stat = "2d10, crit 19-20/x2, 15 lbs., Large, Slashing";
+                    Treasure.GP = 500;
                 }
-                Prefix = Dice.D(60) + 25;
-                Suffix = Dice.D(60) + 25;
+                Prefix_Dice = 60;
+                Prefix_Mod = 25;
+                Suffix_Dice = 60;
+                Suffix_Mod = 25;
             }   //Swords
-            if (41 <= i && i <= 44)
+            if (41 <= Item_Roll && Item_Roll <= 44)
             {
                 //Clubs ---------------------------------------------------------------------------------------------------------------------------------
-                int c = Dice.D(20) + CR;
-                if (c <= 7)
+                int Club = Dice.D(20) + CR;
+                if (Club <= 7)
                 {
-                    tre.Name = "CLub";
-                    tre.Stat = "1d6, crit x2, 3 lbs., Medium, Bludgeoning";
-                    tre.GP = 1;
+                    Treasure.Name = "CLub";
+                    Treasure.Stat = "1d6, crit x2, 3 lbs., Medium, Bludgeoning";
+                    Treasure.GP = 1;
                 }
-                else if (c <= 9)
+                else if (Club <= 9)
                 {
-                    tre.Name = "Spiked Club";
-                    tre.Stat = "1d6, crit x3, 5 lbs., Medium, Bludgeoning/Piercing";
-                    tre.GP = 5;
+                    Treasure.Name = "Spiked Club";
+                    Treasure.Stat = "1d6, crit x3, 5 lbs., Medium, Bludgeoning/Piercing";
+                    Treasure.GP = 5;
                 }
-                else if (c <= 13)
+                else if (Club <= 13)
                 {
-                    tre.Name = "Light Mace";
-                    tre.Stat = "1d6, crit x2, 6 lbs., Small, Bludgeoning";
-                    tre.GP = 10;
+                    Treasure.Name = "Light Mace";
+                    Treasure.Stat = "1d6, crit x2, 6 lbs., Small, Bludgeoning";
+                    Treasure.GP = 10;
                 }
-                else if (c <= 17)
+                else if (Club <= 17)
                 {
-                    tre.Name = "Scepter";
-                    tre.Stat = "1d, crit x2, 4 lbs., Medium, Bludgeoning";
-                    tre.GP = 20;
+                    Treasure.Name = "Scepter";
+                    Treasure.Stat = "1d, crit x2, 4 lbs., Medium, Bludgeoning";
+                    Treasure.GP = 20;
                 }
-                else if (c <= 19)
+                else if (Club <= 19)
                 {
-                    tre.Name = "Morning Star";
-                    tre.Stat = "1d8, crit x2, 8 lbs., Medium, Bludgeoning/Piercing";
-                    tre.GP = 30;
+                    Treasure.Name = "Morning Star";
+                    Treasure.Stat = "1d8, crit x2, 8 lbs., Medium, Bludgeoning/Piercing";
+                    Treasure.GP = 30;
                 }
-                else if (c <= 23)
+                else if (Club <= 23)
                 {
-                    tre.Name = "Grand Scepter";
-                    tre.Stat = "1d8, crit x2, 6 lbs., Medium, Bludgeoning";
-                    tre.GP = 40;
+                    Treasure.Name = "Grand Scepter";
+                    Treasure.Stat = "1d8, crit x2, 6 lbs., Medium, Bludgeoning";
+                    Treasure.GP = 40;
                 }
-                else if (c <= 25)
+                else if (Club <= 25)
                 {
-                    tre.Name = "Light Flail";
-                    tre.Stat = "1d8, crit x2, 5 lbs., Medium, Bludgeoning";
-                    tre.GP = 50;
+                    Treasure.Name = "Light Flail";
+                    Treasure.Stat = "1d8, crit x2, 5 lbs., Medium, Bludgeoning";
+                    Treasure.GP = 50;
                 }
-                else if (c <= 28)
+                else if (Club <= 28)
                 {
-                    tre.Name = "War Hammer";
-                    tre.Stat = "1d8, crit x3, 8 lbs., Medium, Bludgeoning";
-                    tre.GP = 60;
+                    Treasure.Name = "War Hammer";
+                    Treasure.Stat = "1d8, crit x3, 8 lbs., Medium, Bludgeoning";
+                    Treasure.GP = 60;
                 }
-                else if (c <= 30)
+                else if (Club <= 30)
                 {
-                    tre.Name = "Maul 2H";
-                    tre.Stat = "1d10, crit x3, 25 lbs., Large, Bludgeoning";
-                    tre.GP = 100;
+                    Treasure.Name = "Maul 2H";
+                    Treasure.Stat = "1d10, crit x3, 25 lbs., Large, Bludgeoning";
+                    Treasure.GP = 100;
                 }
-                else if (c <= 32)
+                else if (Club <= 32)
                 {
-                    tre.Name = "War Scepter";
-                    tre.Stat = "1d10, crit x2, 6 lbs., Medium, Bludgeoning";
-                    tre.GP = 200;
+                    Treasure.Name = "War Scepter";
+                    Treasure.Stat = "1d10, crit x2, 6 lbs., Medium, Bludgeoning";
+                    Treasure.GP = 200;
                 }
-                else if (c <= 33)
+                else if (Club <= 33)
                 {
-                    tre.Name = "Great Maul 2H";
-                    tre.Stat = "2d6, crit x3, 30 lbs., Large, Bludgeoning";
-                    tre.GP = 250;
+                    Treasure.Name = "Great Maul 2H";
+                    Treasure.Stat = "2d6, crit x3, 30 lbs., Large, Bludgeoning";
+                    Treasure.GP = 250;
                 }
-                Prefix = Dice.D(60) + 25;
-                Suffix = Dice.D(60) + 25;
+                Prefix_Dice = 60;
+                Prefix_Mod = 25;
+                Suffix_Dice = 60;
+                Suffix_Mod = 25;
             }   //Clubs
-            if (45 <= i && i <= 48)
+            if (45 <= Item_Roll && Item_Roll <= 48)
             {
                 //Javelins/Spears ---------------------------------------------------------------------------------------------------------------------------------
-                int j = Dice.D(20) + CR;
-                if (j <= 7)
+                int Spear = Dice.D(20) + CR;
+                if (Spear <= 7)
                 {
                     int a = Dice.D(4) + Dice.D(4);
-                    tre.Name = $"{a} Light Javelin";
-                    tre.Stat = "1d4, crit x2, Range 30 ft., 1 lb., Medium, Piercing";
-                    tre.GP = 2;
-                    tre.Each = true;
-                    tre.Amount = a;
+                    Treasure.Name = $"{a} Light Javelin";
+                    Treasure.Stat = "1d4, crit x2, Range 30 ft., 1 lb., Medium, Piercing";
+                    Treasure.GP = 2;
+                    Treasure.Each = true;
+                    Treasure.Amount = a;
                 }
-                else if (j <= 10)
+                else if (Spear <= 10)
                 {
-                    tre.Name = "Short Spear";
-                    tre.Stat = "1d6, crit x3, Range 20 ft., 3 lb., Medium, Piercing";
-                    tre.GP = 20;
+                    Treasure.Name = "Short Spear";
+                    Treasure.Stat = "1d6, crit x3, Range 20 ft., 3 lb., Medium, Piercing";
+                    Treasure.GP = 20;
                 }
-                else if (j <= 13)
+                else if (Spear <= 13)
                 {
-                    tre.Name = "Long Spear 2H";
-                    tre.Stat = "1d8, crit x3, 9 lb., Large, Piercing";
-                    tre.GP = 40;
+                    Treasure.Name = "Long Spear 2H";
+                    Treasure.Stat = "1d8, crit x3, 9 lb., Large, Piercing";
+                    Treasure.GP = 40;
                 }
-                else if (j <= 17)
-                {
-                    int a = Dice.D(4) + Dice.D(4);
-                    tre.Name = $"{a} Pilum";
-                    tre.Stat = "1d6, crit x2, Range 20 ft., 4 lb., Medium, Piercing";
-                    tre.GP = 3;
-                    tre.Each = true;
-                    tre.Amount = a;
-                }
-                else if (j <= 20)
-                {
-                    tre.Name = "Trident 2H";
-                    tre.Stat = "1d12, crit x2, 15 lb., Large, Piercing";
-                    tre.GP = 80;
-                }
-                else if (j <= 23)
+                else if (Spear <= 17)
                 {
                     int a = Dice.D(4) + Dice.D(4);
-                    tre.Name = $"{a} Light Glaives";
-                    tre.Stat = "1d8, crit x2, Range 10 ft., 4 lb., Medium, Piercing";
-                    tre.GP = 4;
-                    tre.Each = true;
-                    tre.Amount = a;
+                    Treasure.Name = $"{a} Pilum";
+                    Treasure.Stat = "1d6, crit x2, Range 20 ft., 4 lb., Medium, Piercing";
+                    Treasure.GP = 3;
+                    Treasure.Each = true;
+                    Treasure.Amount = a;
                 }
-                else if (j <= 26)
+                else if (Spear <= 20)
                 {
-                    tre.Name = "Brandistock 2H";
-                    tre.Stat = "2d6, crit x3, 15 lb., Large, Piercing/Slashing";
-                    tre.GP = 100;
+                    Treasure.Name = "Trident 2H";
+                    Treasure.Stat = "1d12, crit x2, 15 lb., Large, Piercing";
+                    Treasure.GP = 80;
                 }
-                else if (j <= 29)
+                else if (Spear <= 23)
                 {
                     int a = Dice.D(4) + Dice.D(4);
-                    tre.Name = $"{a} Throwing Spears";
-                    tre.Stat = "1d8, crit x2, Range 30 ft., 3 lb., Medium, Piercing";
-                    tre.GP = 5;
-                    tre.Each = true;
-                    tre.Amount = a;
+                    Treasure.Name = $"{a} Light Glaives";
+                    Treasure.Stat = "1d8, crit x2, Range 10 ft., 4 lb., Medium, Piercing";
+                    Treasure.GP = 4;
+                    Treasure.Each = true;
+                    Treasure.Amount = a;
                 }
-                else if (j <= 32)
+                else if (Spear <= 26)
                 {
-                    tre.Name = "Spetum 2H";
-                    tre.Stat = "1d12, crit x3, 15 lb., Large, Piercing/Slashing";
-                    tre.GP = 120;
+                    Treasure.Name = "Brandistock 2H";
+                    Treasure.Stat = "2d6, crit x3, 15 lb., Large, Piercing/Slashing";
+                    Treasure.GP = 100;
                 }
-                else if (j >= 33)
+                else if (Spear <= 29)
                 {
-                    tre.Name = "Heavy Pike 2H";
-                    tre.Stat = "1d12, crit x3, 12 lb., Large, Piercing";
-                    tre.GP = 200;
+                    int a = Dice.D(4) + Dice.D(4);
+                    Treasure.Name = $"{a} Throwing Spears";
+                    Treasure.Stat = "1d8, crit x2, Range 30 ft., 3 lb., Medium, Piercing";
+                    Treasure.GP = 5;
+                    Treasure.Each = true;
+                    Treasure.Amount = a;
                 }
-                Prefix = Dice.D(60) + 25;
-                Suffix = Dice.D(60) + 25;
+                else if (Spear <= 32)
+                {
+                    Treasure.Name = "Spetum 2H";
+                    Treasure.Stat = "1d12, crit x3, 15 lb., Large, Piercing/Slashing";
+                    Treasure.GP = 120;
+                }
+                else if (Spear >= 33)
+                {
+                    Treasure.Name = "Heavy Pike 2H";
+                    Treasure.Stat = "1d12, crit x3, 12 lb., Large, Piercing";
+                    Treasure.GP = 200;
+                }
+                Prefix_Dice = 60;
+                Prefix_Mod = 25;
+                Suffix_Dice = 60;
+                Suffix_Mod = 25;
             }   //Javelins/Spears
-            if (49 <= i && i <= 50)
+            if (49 <= Item_Roll && Item_Roll <= 50)
             {
                 //Polearms ---------------------------------------------------------------------------------------------------------------------------------
-                int p = Dice.D(20) + CR;
+                int Polearm = Dice.D(20) + CR;
 
-                if (p <= 8)
+                if (Polearm <= 8)
                 {
-                    tre.Name = "Bardiche 2H";
-                    tre.Stat = "1d8, crit x3, 10 lbs., Large, Slashing";
-                    tre.GP = 20;
+                    Treasure.Name = "Bardiche 2H";
+                    Treasure.Stat = "1d8, crit x3, 10 lbs., Large, Slashing";
+                    Treasure.GP = 20;
                 }
-                else if (p <= 14)
+                else if (Polearm <= 14)
                 {
-                    tre.Name = "Voulge 2H";
-                    tre.Stat = "2d4, crit x3, 15 lbs., Large, Slashing";
-                    tre.GP = 40;
+                    Treasure.Name = "Voulge 2H";
+                    Treasure.Stat = "2d4, crit x3, 15 lbs., Large, Slashing";
+                    Treasure.GP = 40;
                 }
-                else if (p <= 20)
+                else if (Polearm <= 20)
                 {
-                    tre.Name = "Scythe 2H";
-                    tre.Stat = "2d4, crit x4, 12 lbs., Large, Piercing/Slashing";
-                    tre.GP = 80;
+                    Treasure.Name = "Scythe 2H";
+                    Treasure.Stat = "2d4, crit x4, 12 lbs., Large, Piercing/Slashing";
+                    Treasure.GP = 80;
                 }
-                else if (p <= 26)
+                else if (Polearm <= 26)
                 {
-                    tre.Name = "Poleaxe 2H";
-                    tre.Stat = "2d10, crit x3, 15 lbs., Large, Slashing";
-                    tre.GP = 150;
+                    Treasure.Name = "Poleaxe 2H";
+                    Treasure.Stat = "2d10, crit x3, 15 lbs., Large, Slashing";
+                    Treasure.GP = 150;
                 }
-                else if (p <= 32)
+                else if (Polearm <= 32)
                 {
-                    tre.Name = "Heavy Halberd 2H";
-                    tre.Stat = "2d6, crit x3, 15 lbs., Large, Piercing/Slashing";
-                    tre.GP = 200;
+                    Treasure.Name = "Heavy Halberd 2H";
+                    Treasure.Stat = "2d6, crit x3, 15 lbs., Large, Piercing/Slashing";
+                    Treasure.GP = 200;
                 }
-                else if (p >= 33)
+                else if (Polearm >= 33)
                 {
-                    tre.Name = "War Sycthe 2H";
-                    tre.Stat = "2d6, crit x4, 15 lbs., Large, Piercing/Slashing";
-                    tre.GP = 250;
+                    Treasure.Name = "War Sycthe 2H";
+                    Treasure.Stat = "2d6, crit x4, 15 lbs., Large, Piercing/Slashing";
+                    Treasure.GP = 250;
                 }
-                Prefix = Dice.D(60) + 25;
-                Suffix = Dice.D(60) + 25;
+                Prefix_Dice = 60;
+                Prefix_Mod = 25;
+                Suffix_Dice = 60;
+                Suffix_Mod = 25;
             }   //Polearms
-            if (51 <= i && i <= 55)
+            if (51 <= Item_Roll && Item_Roll <= 55)
             {
                 //Axes ---------------------------------------------------------------------------------------------------------------------------------
-                int x = Dice.D(20) + CR;
+                int Axe = Dice.D(20) + CR;
 
-                if (x <= 5)
+                if (Axe <= 5)
                 {
-                    tre.Name = "Light Hand Axe";
-                    tre.Stat = "1d4, crit x3, 2 lbs., Small, Slashing";
-                    tre.GP = 10;
+                    Treasure.Name = "Light Hand Axe";
+                    Treasure.Stat = "1d4, crit x3, 2 lbs., Small, Slashing";
+                    Treasure.GP = 10;
                 }
-                else if (x <= 9)
+                else if (Axe <= 9)
                 {
-                    tre.Name = "Hand Axe";
-                    tre.Stat = "1d6, crit x3, 4 lbs., Medium, Slashing";
-                    tre.GP = 20;
+                    Treasure.Name = "Hand Axe";
+                    Treasure.Stat = "1d6, crit x3, 4 lbs., Medium, Slashing";
+                    Treasure.GP = 20;
                 }
-                else if (x <= 12)
-                {
-                    int a = Dice.D(4) + Dice.D(4);
-                    tre.Name = $"{a} Light Throwing Axes";
-                    tre.Stat = "1d4, crit x2, Range 10 ft., 2 lb., Small, Piercing";
-                    tre.GP = 3;
-                    tre.Each = true;
-                    tre.Amount = a;
-                }
-                else if (x <= 16)
-                {
-                    tre.Name = "Large Axe 2H";
-                    tre.Stat = "2d4, crit x3, 12 lbs., Large, Slashing";
-                    tre.GP = 100;
-                }
-                else if (x <= 18)
-                {
-                    tre.Name = "Double Axe";
-                    tre.Stat = "1d8, crit x3, 7 lbs., Medium, Slashing";
-                    tre.GP = 40;
-                }
-                else if (x <= 20)
-                {
-                    tre.Name = "Military Pick";
-                    tre.Stat = "1d6, crit x4, 6 lbs., Medium, Piercing";
-                    tre.GP = 40;
-                }
-                else if (x <= 22)
-                {
-                    tre.Name = "Broad Axe 2H";
-                    tre.Stat = "1d12, crit x3, 15 lbs., Large, Slashing";
-                    tre.GP = 200;
-                }
-                else if (x <= 25)
-                {
-                    tre.Name = "Heavy Battle Axe 2H";
-                    tre.Stat = "2d6, crit x3, 15 lbs., Large, Slashing";
-                    tre.GP = 250;
-                }
-                else if (x <= 29)
+                else if (Axe <= 12)
                 {
                     int a = Dice.D(4) + Dice.D(4);
-                    tre.Name = $"{a} Balanced Throwing Axes";
-                    tre.Stat = "1d6, crit x2, Range 10 ft., 4 lb., Medium, Piercing";
-                    tre.GP = 4;
-                    tre.Each = true;
-                    tre.Amount = a;
+                    Treasure.Name = $"{a} Light Throwing Axes";
+                    Treasure.Stat = "1d4, crit x2, Range 10 ft., 2 lb., Small, Piercing";
+                    Treasure.GP = 3;
+                    Treasure.Each = true;
+                    Treasure.Amount = a;
                 }
-                else if (x <= 33)
+                else if (Axe <= 16)
                 {
-                    tre.Name = "War Axe";
-                    tre.Stat = "1d10, crit x3, 10 lbs., Medium, Slashing";
-                    tre.GP = 100;
+                    Treasure.Name = "Large Axe 2H";
+                    Treasure.Stat = "2d4, crit x3, 12 lbs., Large, Slashing";
+                    Treasure.GP = 100;
                 }
-                else if (x <= 35)
+                else if (Axe <= 18)
                 {
-                    tre.Name = "Great Axe 2H";
-                    tre.Stat = "2d8, crit x3, 20 lbs., Large, Slashing";
-                    tre.GP = 350;
+                    Treasure.Name = "Double Axe";
+                    Treasure.Stat = "1d8, crit x3, 7 lbs., Medium, Slashing";
+                    Treasure.GP = 40;
                 }
-                else if (x >= 36)
+                else if (Axe <= 20)
                 {
-                    tre.Name = "Giant Axe 2H";
-                    tre.Stat = "2d10, crit x3, 25 lbs., Large, Slashing";
-                    tre.GP = 450;
+                    Treasure.Name = "Military Pick";
+                    Treasure.Stat = "1d6, crit x4, 6 lbs., Medium, Piercing";
+                    Treasure.GP = 40;
                 }
-                Prefix = Dice.D(60) + 25;
-                Suffix = Dice.D(60) + 25;
+                else if (Axe <= 22)
+                {
+                    Treasure.Name = "Broad Axe 2H";
+                    Treasure.Stat = "1d12, crit x3, 15 lbs., Large, Slashing";
+                    Treasure.GP = 200;
+                }
+                else if (Axe <= 25)
+                {
+                    Treasure.Name = "Heavy Battle Axe 2H";
+                    Treasure.Stat = "2d6, crit x3, 15 lbs., Large, Slashing";
+                    Treasure.GP = 250;
+                }
+                else if (Axe <= 29)
+                {
+                    int a = Dice.D(4) + Dice.D(4);
+                    Treasure.Name = $"{a} Balanced Throwing Axes";
+                    Treasure.Stat = "1d6, crit x2, Range 10 ft., 4 lb., Medium, Piercing";
+                    Treasure.GP = 4;
+                    Treasure.Each = true;
+                    Treasure.Amount = a;
+                }
+                else if (Axe <= 33)
+                {
+                    Treasure.Name = "War Axe";
+                    Treasure.Stat = "1d10, crit x3, 10 lbs., Medium, Slashing";
+                    Treasure.GP = 100;
+                }
+                else if (Axe <= 35)
+                {
+                    Treasure.Name = "Great Axe 2H";
+                    Treasure.Stat = "2d8, crit x3, 20 lbs., Large, Slashing";
+                    Treasure.GP = 350;
+                }
+                else if (Axe >= 36)
+                {
+                    Treasure.Name = "Giant Axe 2H";
+                    Treasure.Stat = "2d10, crit x3, 25 lbs., Large, Slashing";
+                    Treasure.GP = 450;
+                }
+                Prefix_Dice = 60;
+                Prefix_Mod = 25;
+                Suffix_Dice = 60;
+                Suffix_Mod = 25;
             }   //Axes
-            if (56 <= i && i <= 63)
+            if (56 <= Item_Roll && Item_Roll <= 63)
             {
                 //Bows ---------------------------------------------------------------------------------------------------------------------------------
-                int b = Dice.D(20) + CR;
+                int Bow = Dice.D(20) + CR;
 
-                if (b <= 7)
+                if (Bow <= 7)
                 {
-                    tre.Name = "Short Bow";
-                    tre.Stat = "1d6, crit x3, Range 60 ft., 2 lbs., Medium, Piercing";
-                    tre.GP = 30;
+                    Treasure.Name = "Short Bow";
+                    Treasure.Stat = "1d6, crit x3, Range 60 ft., 2 lbs., Medium, Piercing";
+                    Treasure.GP = 30;
                 }
-                else if (b <= 10)
+                else if (Bow <= 10)
                 {
-                    tre.Name = "Hunters Bow";
-                    tre.Stat = "1d6, crit x3, Range 70 ft., 2 lbs., Medium, Piercing";
-                    tre.GP = 50;
+                    Treasure.Name = "Hunters Bow";
+                    Treasure.Stat = "1d6, crit x3, Range 70 ft., 2 lbs., Medium, Piercing";
+                    Treasure.GP = 50;
                 }
-                else if (b <= 13)
+                else if (Bow <= 13)
                 {
-                    tre.Name = "Long Bow";
-                    tre.Stat = "1d8, crit x3, Range 100 ft., 3 lbs., Large, Piercing";
-                    tre.GP = 75;
+                    Treasure.Name = "Long Bow";
+                    Treasure.Stat = "1d8, crit x3, Range 100 ft., 3 lbs., Large, Piercing";
+                    Treasure.GP = 75;
                 }
-                else if (b <= 20)
+                else if (Bow <= 20)
                 {
                     int a = Dice.D(8) + Dice.D(8) + Dice.D(8) + Dice.D(8);
-                    tre.Name = $"{a} Arrows";
-                    tre.Stat = "Damage as per bow";
-                    tre.GP = 1;
-                    tre.Each = true;
-                    tre.Amount = a;
+                    Treasure.Name = $"{a} Arrows";
+                    Treasure.Stat = "Damage as per bow";
+                    Treasure.GP = 1;
+                    Treasure.Each = true;
+                    Treasure.Amount = a;
                 }
-                else if (b <= 23)
+                else if (Bow <= 23)
                 {
-                    tre.Name = "Composite Bow";
-                    tre.Stat = "1d8, crit x3, Range 110 ft., 3 lbs., Large, Piercing";
-                    tre.GP = 100;
+                    Treasure.Name = "Composite Bow";
+                    Treasure.Stat = "1d8, crit x3, Range 110 ft., 3 lbs., Large, Piercing";
+                    Treasure.GP = 100;
                 }
-                else if (b <= 26)
+                else if (Bow <= 26)
                 {
-                    tre.Name = "Short Battle Bow";
-                    tre.Stat = "1d6 (+1 Strength Bow), crit x3, Range 70 ft., 2 lbs., Medium, Piercing";
-                    tre.GP = 150;
+                    Treasure.Name = "Short Battle Bow";
+                    Treasure.Stat = "1d6 (+1 Strength Bow), crit x3, Range 70 ft., 2 lbs., Medium, Piercing";
+                    Treasure.GP = 150;
                 }
-                else if (b <= 29)
+                else if (Bow <= 29)
                 {
-                    tre.Name = "Short War Bow";
-                    tre.Stat = "1d6 (+2 Strenght Bow), crit x4, Range 70 ft., 2 lbs., Medium, Piercing";
-                    tre.GP = 200;
+                    Treasure.Name = "Short War Bow";
+                    Treasure.Stat = "1d6 (+2 Strenght Bow), crit x4, Range 70 ft., 2 lbs., Medium, Piercing";
+                    Treasure.GP = 200;
                 }
-                else if (b <= 32)
+                else if (Bow <= 32)
                 {
-                    tre.Name = "Long Battle Bow";
-                    tre.Stat = "1d8 (+1 Strength Bow), crit x3, Range 1100 ft., 3 lbs., Large, Piercing";
-                    tre.GP = 250;
+                    Treasure.Name = "Long Battle Bow";
+                    Treasure.Stat = "1d8 (+1 Strength Bow), crit x3, Range 1100 ft., 3 lbs., Large, Piercing";
+                    Treasure.GP = 250;
                 }
-                else if (b <= 33)
+                else if (Bow <= 33)
                 {
-                    tre.Name = "Long War Bow";
-                    tre.Stat = "1d8 (+2 Strenght Bow), crit x3, Range 110 ft., 3 lbs., Large, Piercing";
-                    tre.GP = 300;
+                    Treasure.Name = "Long War Bow";
+                    Treasure.Stat = "1d8 (+2 Strenght Bow), crit x3, Range 110 ft., 3 lbs., Large, Piercing";
+                    Treasure.GP = 300;
                 }
-                Prefix = Dice.D(60) + 30;
-                Suffix = Dice.D(60) + 30;
+                Prefix_Dice = 60;
+                Prefix_Mod = 30;
+                Suffix_Dice = 60;
+                Suffix_Mod = 30;
             }   //Bows
-            if (64 <= i && i <= 65)
+            if (64 <= Item_Roll && Item_Roll <= 65)
             {
                 //Crossbows ---------------------------------------------------------------------------------------------------------------------------------
-                int c = Dice.D(20) + CR;
+                int Crossbow = Dice.D(20) + CR;
 
-                if (c <= 5)
+                if (Crossbow <= 5)
                 {
                     int a = Dice.D(6) + Dice.D(6) + Dice.D(6);
-                    tre.Name = $"{a} Bolts";
-                    tre.Stat = "Damage as per crossbow";
-                    tre.GP = 1;
-                    tre.Each = true;
-                    tre.Amount = a;
+                    Treasure.Name = $"{a} Bolts";
+                    Treasure.Stat = "Damage as per crossbow";
+                    Treasure.GP = 1;
+                    Treasure.Each = true;
+                    Treasure.Amount = a;
                 }
-                else if (c <= 17)
+                else if (Crossbow <= 17)
                 {
-                    tre.Name = "Light Crossbow";
-                    tre.Stat = "1d8, crit 19-20/x3, Range 80 ft., 6 lbs., Small, Piercing";
-                    tre.GP = 70;
+                    Treasure.Name = "Light Crossbow";
+                    Treasure.Stat = "1d8, crit 19-20/x3, Range 80 ft., 6 lbs., Small, Piercing";
+                    Treasure.GP = 70;
                 }
-                else if (c <= 22)
-                {
-                    int a = Dice.D(6) + Dice.D(6) + Dice.D(6);
-                    tre.Name = $"{a} Bolts";
-                    tre.Stat = "Damage as per crossbow";
-                    tre.GP = 1;
-                    tre.Each = true;
-                    tre.Amount = a;
-                }
-                else if (c <= 32)
-                {
-                    tre.Name = "Heavy Crossbow";
-                    tre.Stat = "1d10, crit 19-20/x3, Range 120 ft., 9 lbs., Medium, Piercing";
-                    tre.GP = 150;
-                }
-                else if (c <= 33)
+                else if (Crossbow <= 22)
                 {
                     int a = Dice.D(6) + Dice.D(6) + Dice.D(6);
-                    tre.Name = $"{a} Bolts";
-                    tre.Stat = "Damage as per crossbow";
-                    tre.GP = 1;
-                    tre.Each = true;
-                    tre.Amount = a;
+                    Treasure.Name = $"{a} Bolts";
+                    Treasure.Stat = "Damage as per crossbow";
+                    Treasure.GP = 1;
+                    Treasure.Each = true;
+                    Treasure.Amount = a;
                 }
-                Prefix = Dice.D(60) + 30;
-                Suffix = Dice.D(60) + 30;
+                else if (Crossbow <= 32)
+                {
+                    Treasure.Name = "Heavy Crossbow";
+                    Treasure.Stat = "1d10, crit 19-20/x3, Range 120 ft., 9 lbs., Medium, Piercing";
+                    Treasure.GP = 150;
+                }
+                else if (Crossbow <= 33)
+                {
+                    int a = Dice.D(6) + Dice.D(6) + Dice.D(6);
+                    Treasure.Name = $"{a} Bolts";
+                    Treasure.Stat = "Damage as per crossbow";
+                    Treasure.GP = 1;
+                    Treasure.Each = true;
+                    Treasure.Amount = a;
+                }
+                Prefix_Dice = 60;
+                Prefix_Mod = 30;
+                Suffix_Dice = 60;
+                Suffix_Mod = 30;
             }   //Crossbows
-            if (66 <= i && i <= 70)
+            if (66 <= Item_Roll && Item_Roll <= 70)
             {
                 //Wands ---------------------------------------------------------------------------------------------------------------------------------
-                int w = Dice.D(20) + CR;
-                if (w <= 13)
+                int Wand = Dice.D(20) + CR;
+                if (Wand <= 13)
                 {
-                    tre.Name = "Wand";
-                    tre.Stat = "1d2, crit x2, 1 lbs., Small, Bludgeoning";
-                    tre.GP = 10;
+                    Treasure.Name = "Wand";
+                    Treasure.Stat = "1d2, crit x2, 1 lbs., Small, Bludgeoning";
+                    Treasure.GP = 10;
                 }
-                else if (w <= 20)
+                else if (Wand <= 20)
                 {
-                    tre.Name = "Bone Wand";
-                    tre.Stat = "1d3, crit x2, 1 lbs., Small, Bludgeoning";
-                    tre.GP = 30;
+                    Treasure.Name = "Bone Wand";
+                    Treasure.Stat = "1d3, crit x2, 1 lbs., Small, Bludgeoning";
+                    Treasure.GP = 30;
                 }
-                else if (w <= 25)
+                else if (Wand <= 25)
                 {
-                    tre.Name = "Yew Wand";
-                    tre.Stat = "1d3, crit x2, 1 lbs., Small, Bludgeoning";
-                    tre.GP = 60;
+                    Treasure.Name = "Yew Wand";
+                    Treasure.Stat = "1d3, crit x2, 1 lbs., Small, Bludgeoning";
+                    Treasure.GP = 60;
                 }
-                else if (w >= 26)
+                else if (Wand >= 26)
                 {
-                    tre.Name = "Grim Wand";
-                    tre.Stat = "1d4, crit x2, 1 lbs., Small, Bludgeoning";
-                    tre.GP = 100;
+                    Treasure.Name = "Grim Wand";
+                    Treasure.Stat = "1d4, crit x2, 1 lbs., Small, Bludgeoning";
+                    Treasure.GP = 100;
                 }
-                Prefix = Dice.D(60) + 40;
-                Suffix = Dice.D(60) + 40;
+                Prefix_Dice = 60;
+                Prefix_Mod = 40;
+                Suffix_Dice = 60;
+                Suffix_Mod = 40;
             }   //Wands
-            if (71 <= i && i <= 75)
+            if (71 <= Item_Roll && Item_Roll <= 75)
             {
                 //Staves ---------------------------------------------------------------------------------------------------------------------------------
-                int s = Dice.D(20) + CR;
+                int Staff = Dice.D(20) + CR;
 
-                if (s <= 10)
+                if (Staff <= 10)
                 {
-                    tre.Name = "Short Staff";
-                    tre.Stat = "1d4, crit x2, 3 lbs., Medium, Bludgeoning";
-                    tre.GP = 10;
+                    Treasure.Name = "Short Staff";
+                    Treasure.Stat = "1d4, crit x2, 3 lbs., Medium, Bludgeoning";
+                    Treasure.GP = 10;
                 }
-                else if (s <= 19)
+                else if (Staff <= 19)
                 {
-                    tre.Name = "Long Staff";
-                    tre.Stat = "1d6, crit x2, 6 lbs., Large, Bludgeoning";
-                    tre.GP = 30;
+                    Treasure.Name = "Long Staff";
+                    Treasure.Stat = "1d6, crit x2, 6 lbs., Large, Bludgeoning";
+                    Treasure.GP = 30;
                 }
-                else if (s <= 26)
+                else if (Staff <= 26)
                 {
-                    tre.Name = "Gnarled Staff";
-                    tre.Stat = "1d8, crit x2, 6 lbs., Large, Bludgeoning";
-                    tre.GP = 50;
+                    Treasure.Name = "Gnarled Staff";
+                    Treasure.Stat = "1d8, crit x2, 6 lbs., Large, Bludgeoning";
+                    Treasure.GP = 50;
                 }
-                else if (s <= 32)
+                else if (Staff <= 32)
                 {
-                    tre.Name = "Battle Staff";
-                    tre.Stat = "2d4, crit x2, 6 lbs., Large, Bludgeoning";
-                    tre.GP = 100;
+                    Treasure.Name = "Battle Staff";
+                    Treasure.Stat = "2d4, crit x2, 6 lbs., Large, Bludgeoning";
+                    Treasure.GP = 100;
                 }
-                else if (s >= 33)
+                else if (Staff >= 33)
                 {
-                    tre.Name = "War Staff";
-                    tre.Stat = "1d10, crit x2, 10 lbs., Large, Bludgeoning";
-                    tre.GP = 200;
+                    Treasure.Name = "War Staff";
+                    Treasure.Stat = "1d10, crit x2, 10 lbs., Large, Bludgeoning";
+                    Treasure.GP = 200;
                 }
-                Prefix = Dice.D(60) + 40;
-                Suffix = Dice.D(60) + 40;
+                Prefix_Dice = 60;
+                Prefix_Mod = 40;
+                Suffix_Dice = 60;
+                Suffix_Mod = 40;
             }   //Staves
-            if (76 <= i && i <= 79)
+            if (76 <= Item_Roll && Item_Roll <= 79)
             {
                 //Accessories ---------------------------------------------------------------------------------------------------------------------------------
-                int m = Dice.D(20) + CR;
+                int Accessory = Dice.D(20) + CR;
 
-                if (m <= 6)
+                if (Accessory <= 6)
                 {
-                    tre.Name = "Charm";
-                    tre.Stat = "Has its when carried person";
-                    tre.GP = 50;
+                    Treasure.Name = "Charm";
+                    Treasure.Stat = "Has its when carried person";
+                    Treasure.GP = 50;
                 }
-                else if (m <= 17)
+                else if (Accessory <= 17)
                 {
-                    tre.Name = "Ring";
-                    tre.Stat = "Worn on hand, one per hand";
-                    tre.GP = 75;
+                    Treasure.Name = "Ring";
+                    Treasure.Stat = "Worn on hand, one per hand";
+                    Treasure.GP = 75;
                 }
-                else if (m <= 18)
+                else if (Accessory <= 18)
                 {
-                    tre.Name = "Flag";
-                    tre.Stat = "Draped over body, One per character";
-                    tre.GP = 100;
+                    Treasure.Name = "Flag";
+                    Treasure.Stat = "Draped over body, One per character";
+                    Treasure.GP = 100;
                 }
-                else if (m <= 19)
+                else if (Accessory <= 19)
                 {
-                    tre.Name = "Orb";
-                    tre.Stat = "Worn on arm, one per character, can't use both shield and orb";
-                    tre.GP = 150;
+                    Treasure.Name = "Orb";
+                    Treasure.Stat = "Worn on arm, one per character, can't use both shield and orb";
+                    Treasure.GP = 150;
                 }
-                else if (m >= 20)
+                else if (Accessory >= 20)
                 {
-                    tre.Name = "Amulet";
-                    tre.Stat = "Worn on neck, one per character";
-                    tre.GP = 200;
+                    Treasure.Name = "Amulet";
+                    Treasure.Stat = "Worn on neck, one per character";
+                    Treasure.GP = 200;
                 }
-                Prefix = Dice.D(40) + 30;
-                Suffix = Dice.D(40) + 30;
+                Prefix_Dice = 40;
+                Prefix_Mod = 30;
+                Suffix_Dice = 40;
+                Suffix_Mod = 30;
             }   //Accessories
-            if (i == 80)
+            if (Item_Roll == 80)
             {
                 //Gems ---------------------------------------------------------------------------------------------------------------------------------
-                int g = Dice.D(20) + CR;
+                int Gem = Dice.D(20) + CR;
 
-                if (g <= 7)
+                if (Gem <= 7)
                 {
-                    tre.Name = "Chipped Jewel";
-                    tre.Stat = smallItems.GemRoll();
-                    tre.GP = 50;
+                    Treasure.Name = "Chipped Jewel";
+                    Treasure.Stat = smallItems.GemRoll();
+                    Treasure.GP = 50;
                 }
-                else if (g <= 13)
+                else if (Gem <= 13)
                 {
-                    tre.Name = "Flawed Jewel";
-                    tre.Stat = smallItems.GemRoll();
-                    tre.GP = 100;
+                    Treasure.Name = "Flawed Jewel";
+                    Treasure.Stat = smallItems.GemRoll();
+                    Treasure.GP = 100;
                 }
-                else if (g <= 19)
+                else if (Gem <= 19)
                 {
-                    tre.Name = "Jewel";
-                    tre.Stat = smallItems.GemRoll();
-                    tre.GP = 250;
+                    Treasure.Name = "Jewel";
+                    Treasure.Stat = smallItems.GemRoll();
+                    Treasure.GP = 250;
                 }
-                else if (g <= 25)
+                else if (Gem <= 25)
                 {
-                    tre.Name = "Flawless Jewel";
-                    tre.Stat = smallItems.GemRoll();
-                    tre.GP = 500;
+                    Treasure.Name = "Flawless Jewel";
+                    Treasure.Stat = smallItems.GemRoll();
+                    Treasure.GP = 500;
                 }
-                else if (g >= 26)
+                else if (Gem >= 26)
                 {
-                    tre.Name = "Perfect Jewel";
-                    tre.Stat = smallItems.GemRoll();
-                    tre.GP = 200;
+                    Treasure.Name = "Perfect Jewel";
+                    Treasure.Stat = smallItems.GemRoll();
+                    Treasure.GP = 200;
                 }
-                Prefix = Dice.D(40) + 30;
-                Suffix = Dice.D(40) + 30;
+                Prefix_Dice = 40;
+                Prefix_Mod = 30;
+                Suffix_Dice = 40;
+                Suffix_Mod = 30;
             }              //Gems
-            if (81 <= i && i <= 90)
+            if (81 <= Item_Roll && Item_Roll <= 90)
             {
                 //Inscribed Spells ---------------------------------------------------------------------------------------------------------------------------------
                 int s = Dice.D(20) + CR;
 
                 if (s <= 17)
                 {
-                    tre.Name = "Scroll";
-                    tre.Stat = "Can be read once to cast the spell, at minimum level necessart to cast spell";
-                    tre.GP = 25;
+                    Treasure.Name = "Scroll";
+                    Treasure.Stat = "Can be read once to cast the spell, at minimum level necessart to cast spell";
+                    Treasure.GP = 25;
                 }
                 else if (s <= 18)
                 {
-                    tre.Name = "Rune";
-                    tre.Stat = "Set once as a trap, acts as aglpth of warding with the listed spell's effect";
-                    tre.GP = 50;
+                    Treasure.Name = "Rune";
+                    Treasure.Stat = "Set once as a trap, acts as aglpth of warding with the listed spell's effect";
+                    Treasure.GP = 50;
                 }
                 else if (s >= 19)
                 {
-                    tre.Name = "Book";
-                    tre.Stat = "Can be read once to gain the spell, or allows one improvement for its spell. First improvement is either +1 die of damage, +1 ability damage, or +2 points of healing. Second improvment is -2 save. Ignore improvements that don't apply.";
-                    tre.GP = 100;
+                    Treasure.Name = "Book";
+                    Treasure.Stat = "Can be read once to gain the spell, or allows one improvement for its spell. First improvement is either +1 die of damage, +1 ability damage, or +2 points of healing. Second improvment is -2 save. Ignore improvements that don't apply.";
+                    Treasure.GP = 100;
                 }
-                Prefix = -1;
-                Suffix = Dice.D(10) + 90;
+                Prefix_Dice = -1;
+                Suffix_Dice = 10;
+                Suffix_Mod = 90;
             }   //Inscribed spells
-            if (91 <= i && i <= 100)
+            if (91 <= Item_Roll && Item_Roll <= 100) 
             {
-                //Perishables ---------------------------------------------------------------------------------------------------------------------------------
+                //Perishables
                 int p = Dice.D(100);
                 bool OOR = false;
 
@@ -1075,532 +1102,532 @@ namespace BaseItem
                 }
                 else if (p <= 16)
                 {
-                    tre.Name = "Rejuvenation Potion";
-                    tre.Stat = "Heals 4d8+7 points of damage, restores 4 previously cast spell levels";
-                    tre.GP = 100;
+                    Treasure.Name = "Rejuvenation Potion";
+                    Treasure.Stat = "Heals 4d8+7 points of damage, restores 4 previously cast spell levels";
+                    Treasure.GP = 100;
                 }
                 else if (p <= 18)
                 {
-                    tre.Name = "Full Rejuvenation Potion";
-                    tre.Stat = "Heals 8d8+15 points of damage, restores 8 previously cast spell levels";
-                    tre.GP = 500;
+                    Treasure.Name = "Full Rejuvenation Potion";
+                    Treasure.Stat = "Heals 8d8+15 points of damage, restores 8 previously cast spell levels";
+                    Treasure.GP = 500;
                 }
                 else if (p <= 19)
                 {
-                    tre.Name = "Antidote";
-                    tre.Stat = "Restores 1d4 ability points lost to poison";
-                    tre.GP = 100;
+                    Treasure.Name = "Antidote";
+                    Treasure.Stat = "Restores 1d4 ability points lost to poison";
+                    Treasure.GP = 100;
                 }
                 else if (p <= 20)
                 {
-                    tre.Name = "Full Antidote";
-                    tre.Stat = "Resotes all ability points lost to poison";
-                    tre.GP = 500;
+                    Treasure.Name = "Full Antidote";
+                    Treasure.Stat = "Resotes all ability points lost to poison";
+                    Treasure.GP = 500;
                 }
                 else if (p <= 21)
                 {
-                    tre.Name = "Stamina Potion";
-                    tre.Stat = "Negates current fatigue";
-                    tre.GP = 100;
+                    Treasure.Name = "Stamina Potion";
+                    Treasure.Stat = "Negates current fatigue";
+                    Treasure.GP = 100;
                 }
                 else if (p <= 22)
                 {
-                    tre.Name = "Full Stamina Potion";
-                    tre.Stat = "Negates current fatigue, immune to fatigue-causing factors for 10 minutes";
-                    tre.GP = 500;
+                    Treasure.Name = "Full Stamina Potion";
+                    Treasure.Stat = "Negates current fatigue, immune to fatigue-causing factors for 10 minutes";
+                    Treasure.GP = 500;
                 }
                 else if (p <= 23)
                 {
-                    tre.Name = "Restoration Potion";
-                    tre.Stat = "Heals all damage, dispels mind-influencing effects";
-                    tre.GP = 2500;
+                    Treasure.Name = "Restoration Potion";
+                    Treasure.Stat = "Heals all damage, dispels mind-influencing effects";
+                    Treasure.GP = 2500;
                 }
                 else if (p <= 24)
                 {
-                    tre.Name = "Oil";
-                    tre.Stat = "1d6 fire damage, 1 point splash, 50% failure chance";
-                    tre.GP = 1;
+                    Treasure.Name = "Oil";
+                    Treasure.Stat = "1d6 fire damage, 1 point splash, 50% failure chance";
+                    Treasure.GP = 1;
                 }
                 else if (p <= 25)
                 {
-                    tre.Name = "Explosive Potion";
-                    tre.Stat = "3d6 points of damage, 1d6 splash";
-                    tre.GP = 100;
+                    Treasure.Name = "Explosive Potion";
+                    Treasure.Stat = "3d6 points of damage, 1d6 splash";
+                    Treasure.GP = 100;
                 }
                 else if (p <= 26)
                 {
-                    tre.Name = "Fulminating Potion";
-                    tre.Stat = "1d6 points of acid damage, splash 1, burns 1d4 rounds";
-                    tre.GP = 25;
+                    Treasure.Name = "Fulminating Potion";
+                    Treasure.Stat = "1d6 points of acid damage, splash 1, burns 1d4 rounds";
+                    Treasure.GP = 25;
                 }
                 else if (p <= 27)
                 {
-                    tre.Name = "Rancid Gas Potion";
-                    tre.Stat = "Fort DC 15, if fail take 1d4 point of temp Con damage. If a second inhaling is done before recovering and failing the save, take 1d6 points of Temp Con Damage";
-                    tre.GP = 50;
+                    Treasure.Name = "Rancid Gas Potion";
+                    Treasure.Stat = "Fort DC 15, if fail take 1d4 point of temp Con damage. If a second inhaling is done before recovering and failing the save, take 1d6 points of Temp Con Damage";
+                    Treasure.GP = 50;
                 }
                 else if (p <= 28)
                 {
-                    tre.Name = "Choking Gas Potion";
-                    tre.Stat = "Fort DC 12, if fail take 1 point of temp Con damage. If a second inhaling is done before recovering and failing the save, take 1d6 points of Temp Con Damage";
-                    tre.GP = 100;
+                    Treasure.Name = "Choking Gas Potion";
+                    Treasure.Stat = "Fort DC 12, if fail take 1 point of temp Con damage. If a second inhaling is done before recovering and failing the save, take 1d6 points of Temp Con Damage";
+                    Treasure.GP = 100;
                 }
                 else if (p <= 29)
                 {
-                    tre.Name = "Strangling Gas Potion";
-                    tre.Stat = "Fort DC 18, if fail take 2d4 points of temp Con damage. If a second inhaling is done before recovering and failing the save, take 2d4 points of Temp Con Damage";
-                    tre.GP = 500;
+                    Treasure.Name = "Strangling Gas Potion";
+                    Treasure.Stat = "Fort DC 18, if fail take 2d4 points of temp Con damage. If a second inhaling is done before recovering and failing the save, take 2d4 points of Temp Con Damage";
+                    Treasure.GP = 500;
                 }
                 else if (p <= 30)
                 {
-                    tre.Name = "Acidic Potion";
-                    tre.Stat = "1d6 acid, splash 1";
-                    tre.GP = 10;
+                    Treasure.Name = "Acidic Potion";
+                    Treasure.Stat = "1d6 acid, splash 1";
+                    Treasure.GP = 10;
                 }
                 else if (p <= 31)
                 {
-                    tre.Name = "Energizing Herb";
-                    tre.Stat = "+2 Strength for 10 minutes";
-                    tre.GP = 500;
+                    Treasure.Name = "Energizing Herb";
+                    Treasure.Stat = "+2 Strength for 10 minutes";
+                    Treasure.GP = 500;
                 }
                 else if (p <= 32)
                 {
-                    tre.Name = "Strengthing Herb";
-                    tre.Stat = "+3 Strength for 10 minutes";
-                    tre.GP = 1000;
+                    Treasure.Name = "Strengthing Herb";
+                    Treasure.Stat = "+3 Strength for 10 minutes";
+                    Treasure.GP = 1000;
                 }
                 else if (p <= 33)
                 {
-                    tre.Name = "Empowering Herb";
-                    tre.Stat = "+4 Strength for 10 minutes";
-                    tre.GP = 1500;
+                    Treasure.Name = "Empowering Herb";
+                    Treasure.Stat = "+4 Strength for 10 minutes";
+                    Treasure.GP = 1500;
                 }
                 else if (p <= 34)
                 {
-                    tre.Name = "Artful Herb";
-                    tre.Stat = "+2 Dexterity for 10 minutes";
-                    tre.GP = 500;
+                    Treasure.Name = "Artful Herb";
+                    Treasure.Stat = "+2 Dexterity for 10 minutes";
+                    Treasure.GP = 500;
                 }
                 else if (p <= 35)
                 {
-                    tre.Name = "Skillful Herb";
-                    tre.Stat = "+3 Dexterity for 10 minutes";
-                    tre.GP = 1000;
+                    Treasure.Name = "Skillful Herb";
+                    Treasure.Stat = "+3 Dexterity for 10 minutes";
+                    Treasure.GP = 1000;
                 }
                 else if (p <= 36)
                 {
-                    tre.Name = "Adroit Herb";
-                    tre.Stat = "+4 Strength for 10 minutes";
-                    tre.GP = 1500;
+                    Treasure.Name = "Adroit Herb";
+                    Treasure.Stat = "+4 Strength for 10 minutes";
+                    Treasure.GP = 1500;
                 }
                 else if (p <= 37)
                 {
-                    tre.Name = "Stalwart Herb";
-                    tre.Stat = "+2 Constitution for 10 minutes";
-                    tre.GP = 500;
+                    Treasure.Name = "Stalwart Herb";
+                    Treasure.Stat = "+2 Constitution for 10 minutes";
+                    Treasure.GP = 500;
                 }
                 else if (p <= 38)
                 {
-                    tre.Name = "Hardy Herb";
-                    tre.Stat = "+3 Constitution for 10 minutes";
-                    tre.GP = 1000;
+                    Treasure.Name = "Hardy Herb";
+                    Treasure.Stat = "+3 Constitution for 10 minutes";
+                    Treasure.GP = 1000;
                 }
                 else if (p <= 39)
                 {
-                    tre.Name = "Robust Herb";
-                    tre.Stat = "+4 Constitution for 10 minutes";
-                    tre.GP = 1500;
+                    Treasure.Name = "Robust Herb";
+                    Treasure.Stat = "+4 Constitution for 10 minutes";
+                    Treasure.GP = 1500;
                 }
                 else if (p <= 40)
                 {
-                    tre.Name = "Sage Herb";
-                    tre.Stat = "+2 Intelligence for 10 minutes";
-                    tre.GP = 500;
+                    Treasure.Name = "Sage Herb";
+                    Treasure.Stat = "+2 Intelligence for 10 minutes";
+                    Treasure.GP = 500;
                 }
                 else if (p <= 41)
                 {
-                    tre.Name = "Shrewd Herb";
-                    tre.Stat = "+3 Intelligence for 10 minutes";
-                    tre.GP = 1000;
+                    Treasure.Name = "Shrewd Herb";
+                    Treasure.Stat = "+3 Intelligence for 10 minutes";
+                    Treasure.GP = 1000;
                 }
                 else if (p <= 42)
                 {
-                    tre.Name = "Vivid Herb";
-                    tre.Stat = "+4 Intelligence for 10 minutes";
-                    tre.GP = 1500;
+                    Treasure.Name = "Vivid Herb";
+                    Treasure.Stat = "+4 Intelligence for 10 minutes";
+                    Treasure.GP = 1500;
                 }
                 else if (p <= 43)
                 {
-                    tre.Name = "Indigo Herb";
-                    tre.Stat = "+2 save vs cold, -1/4 cold damage for 10 minutes";
-                    tre.GP = 1500;
+                    Treasure.Name = "Indigo Herb";
+                    Treasure.Stat = "+2 save vs cold, -1/4 cold damage for 10 minutes";
+                    Treasure.GP = 1500;
                 }
                 else if (p <= 44)
                 {
-                    tre.Name = "Cerulean Herb";
-                    tre.Stat = "+4 save vs cold, -1/2 cold damage for 10 minutes";
-                    tre.GP = 2000;
+                    Treasure.Name = "Cerulean Herb";
+                    Treasure.Stat = "+4 save vs cold, -1/2 cold damage for 10 minutes";
+                    Treasure.GP = 2000;
                 }
                 else if (p <= 45)
                 {
-                    tre.Name = "Russet Herb";
-                    tre.Stat = "+2 save vs fire, -1/4 fire damage for 10 minutes";
-                    tre.GP = 1500;
+                    Treasure.Name = "Russet Herb";
+                    Treasure.Stat = "+2 save vs fire, -1/4 fire damage for 10 minutes";
+                    Treasure.GP = 1500;
                 }
                 else if (p <= 46)
                 {
-                    tre.Name = "Vermilion Herb";
-                    tre.Stat = "+4 save vs fire, -1/2 fire damage for 10 minutes";
-                    tre.GP = 2000;
+                    Treasure.Name = "Vermilion Herb";
+                    Treasure.Stat = "+4 save vs fire, -1/2 fire damage for 10 minutes";
+                    Treasure.GP = 2000;
                 }
                 else if (p <= 47)
                 {
-                    tre.Name = "Crackling Herb";
-                    tre.Stat = "+2 save vs lightning, -1/4 lightning damage for 10 minutes";
-                    tre.GP = 1500;
+                    Treasure.Name = "Crackling Herb";
+                    Treasure.Stat = "+2 save vs lightning, -1/4 lightning damage for 10 minutes";
+                    Treasure.GP = 1500;
                 }
                 else if (p <= 48)
                 {
-                    tre.Name = "Forked Herb";
-                    tre.Stat = "+4 save vs lightning, -1/2 lightning damage for 10 minutes";
-                    tre.GP = 2000;
+                    Treasure.Name = "Forked Herb";
+                    Treasure.Stat = "+4 save vs lightning, -1/2 lightning damage for 10 minutes";
+                    Treasure.GP = 2000;
                 }
                 else if (p <= 49)
                 {
-                    tre.Name = "Swart Herb";
-                    tre.Stat = "+2 save vs spell, -1/4 spell damage for 10 minutes";
-                    tre.GP = 1500;
+                    Treasure.Name = "Swart Herb";
+                    Treasure.Stat = "+2 save vs spell, -1/4 spell damage for 10 minutes";
+                    Treasure.GP = 1500;
                 }
                 else if (p <= 50)
                 {
-                    tre.Name = "Artamentous Herb";
-                    tre.Stat = "+4 save vs spell, -1/2 spell damage for 10 minutes";
-                    tre.GP = 2000;
+                    Treasure.Name = "Artamentous Herb";
+                    Treasure.Stat = "+4 save vs spell, -1/2 spell damage for 10 minutes";
+                    Treasure.GP = 2000;
                 }
                 else if (p <= 51)
                 {
-                    tre.Name = "Vital Herb";
-                    tre.Stat = "+2 save vs Poison, no initial damage, last for 10 minutes";
-                    tre.GP = 1500;
+                    Treasure.Name = "Vital Herb";
+                    Treasure.Stat = "+2 save vs Poison, no initial damage, last for 10 minutes";
+                    Treasure.GP = 1500;
                 }
                 else if (p <= 52)
                 {
-                    tre.Name = "Enduring Herb";
-                    tre.Stat = "+4 save vs Poison, no secondary damage, last for 10 minutes";
-                    tre.GP = 2000;
+                    Treasure.Name = "Enduring Herb";
+                    Treasure.Stat = "+4 save vs Poison, no secondary damage, last for 10 minutes";
+                    Treasure.GP = 2000;
                 }
                 else if (p <= 53)
                 {
-                    tre.Name = "Urgent Herb";
-                    tre.Stat = "+2 speed initiative bonus for 10 minutes";
-                    tre.GP = 500;
+                    Treasure.Name = "Urgent Herb";
+                    Treasure.Stat = "+2 speed initiative bonus for 10 minutes";
+                    Treasure.GP = 500;
                 }
                 else if (p <= 54)
                 {
-                    tre.Name = "Fleet Herb";
-                    tre.Stat = "+4 speed initiative bonus for 10 minutes";
-                    tre.GP = 1000;
+                    Treasure.Name = "Fleet Herb";
+                    Treasure.Stat = "+4 speed initiative bonus for 10 minutes";
+                    Treasure.GP = 1000;
                 }
                 else if (p <= 55)
                 {
-                    tre.Name = "Brisk Herb";
-                    tre.Stat = "+10 ft. speed bonus to move for 10 minutes";
-                    tre.GP = 500;
+                    Treasure.Name = "Brisk Herb";
+                    Treasure.Stat = "+10 ft. speed bonus to move for 10 minutes";
+                    Treasure.GP = 500;
                 }
                 else if (p <= 56)
                 {
-                    tre.Name = "Swift Herb";
-                    tre.Stat = "+20 ft. speed bonus to move for 10 minutes";
-                    tre.GP = 1000;
+                    Treasure.Name = "Swift Herb";
+                    Treasure.Stat = "+20 ft. speed bonus to move for 10 minutes";
+                    Treasure.GP = 1000;
                 }
                 else if (p <= 57)
                 {
-                    tre.Name = "Dazzling Herb";
-                    tre.Stat = "+1 1st level spell, cast within 10 minutes (spellcaster only)";
-                    tre.GP = 500;
+                    Treasure.Name = "Dazzling Herb";
+                    Treasure.Stat = "+1 1st level spell, cast within 10 minutes (spellcaster only)";
+                    Treasure.GP = 500;
                 }
                 else if (p <= 58)
                 {
-                    tre.Name = "Fascinating Herb";
-                    tre.Stat = "+1 2nd level spell, cast within 10 minutes (spellcaster only)";
-                    tre.GP = 1000;
+                    Treasure.Name = "Fascinating Herb";
+                    Treasure.Stat = "+1 2nd level spell, cast within 10 minutes (spellcaster only)";
+                    Treasure.GP = 1000;
                 }
                 else if (p <= 59)
                 {
-                    tre.Name = "Bright Herb";
-                    tre.Stat = "Bonus hit points, +50% of current for 10 minutes";
-                    tre.GP = 500;
+                    Treasure.Name = "Bright Herb";
+                    Treasure.Stat = "Bonus hit points, +50% of current for 10 minutes";
+                    Treasure.GP = 500;
                 }
                 else if (p <= 60)
                 {
-                    tre.Name = "Solar Herb";
-                    tre.Stat = "Bonus hit points, +100% of current for 10 minutes";
-                    tre.GP = 1000;
+                    Treasure.Name = "Solar Herb";
+                    Treasure.Stat = "Bonus hit points, +100% of current for 10 minutes";
+                    Treasure.GP = 1000;
                 }
                 else if (p <= 61)
                 {
-                    tre.Name = "Omniscient Herb";
-                    tre.Stat = "+1 Intelligence for 10 minutes";
-                    tre.GP = 500;
+                    Treasure.Name = "Omniscient Herb";
+                    Treasure.Stat = "+1 Intelligence for 10 minutes";
+                    Treasure.GP = 500;
                 }
                 else if (p <= 62)
                 {
-                    tre.Name = "Mystical Herb";
-                    tre.Stat = "All spell duration +50% if cast within 10 minutes";
-                    tre.GP = 1500;
+                    Treasure.Name = "Mystical Herb";
+                    Treasure.Stat = "All spell duration +50% if cast within 10 minutes";
+                    Treasure.GP = 1500;
                 }
                 else if (p <= 63)
                 {
-                    tre.Name = "Arcane Herb";
-                    tre.Stat = "All spell duration +50% if cast within 10 minutes";
-                    tre.GP = 2000;
+                    Treasure.Name = "Arcane Herb";
+                    Treasure.Stat = "All spell duration +50% if cast within 10 minutes";
+                    Treasure.GP = 2000;
                 }
                 else if (p <= 65)
                 {
-                    tre.Name = "Strength Elixir";
-                    tre.Stat = "+2 Strength for one day";
-                    tre.GP = 5000;
+                    Treasure.Name = "Strength Elixir";
+                    Treasure.Stat = "+2 Strength for one day";
+                    Treasure.GP = 5000;
                 }
                 else if (p <= 67)
                 {
-                    tre.Name = "Dexerity Elixir";
-                    tre.Stat = "+2 Dexerity for one day";
-                    tre.GP = 5000;
+                    Treasure.Name = "Dexerity Elixir";
+                    Treasure.Stat = "+2 Dexerity for one day";
+                    Treasure.GP = 5000;
                 }
                 else if (p <= 69)
                 {
-                    tre.Name = "Vitality Elixir";
-                    tre.Stat = "+2 Constitution for one day";
-                    tre.GP = 5000;
+                    Treasure.Name = "Vitality Elixir";
+                    Treasure.Stat = "+2 Constitution for one day";
+                    Treasure.GP = 5000;
                 }
                 else if (p <= 70)
                 {
-                    tre.Name = "Intelligence Elixir";
-                    tre.Stat = "+2 Intelligence for one day";
-                    tre.GP = 5000;
+                    Treasure.Name = "Intelligence Elixir";
+                    Treasure.Stat = "+2 Intelligence for one day";
+                    Treasure.GP = 5000;
                 }
                 else if (p <= 71)
                 {
-                    tre.Name = "Chi Elixir";
-                    tre.Stat = "+2 Wisdom for one day";
-                    tre.GP = 5000;
+                    Treasure.Name = "Chi Elixir";
+                    Treasure.Stat = "+2 Wisdom for one day";
+                    Treasure.GP = 5000;
                 }
                 else if (p <= 72)
                 {
-                    tre.Name = "Spectral Elixir";
-                    tre.Stat = "+2 to all abilitie scores for one day";
-                    tre.GP = 15000;
+                    Treasure.Name = "Spectral Elixir";
+                    Treasure.Stat = "+2 to all abilitie scores for one day";
+                    Treasure.GP = 15000;
                 }
                 else if (p <= 73)
                 {
-                    tre.Name = "Fire Elixir";
-                    tre.Stat = "+2 save vs. fire for one day";
-                    tre.GP = 2500;
+                    Treasure.Name = "Fire Elixir";
+                    Treasure.Stat = "+2 save vs. fire for one day";
+                    Treasure.GP = 2500;
                 }
                 else if (p <= 74)
                 {
-                    tre.Name = "Ice Elixir";
-                    tre.Stat = "+2 save vs. ice for one day";
-                    tre.GP = 2500;
+                    Treasure.Name = "Ice Elixir";
+                    Treasure.Stat = "+2 save vs. ice for one day";
+                    Treasure.GP = 2500;
                 }
                 else if (p <= 75)
                 {
-                    tre.Name = "Lightning Elixir";
-                    tre.Stat = "+2 save vs. lightning for one day";
-                    tre.GP = 2500;
+                    Treasure.Name = "Lightning Elixir";
+                    Treasure.Stat = "+2 save vs. lightning for one day";
+                    Treasure.GP = 2500;
                 }
                 else if (p <= 76)
                 {
-                    tre.Name = "Magic Elixir";
-                    tre.Stat = "+2 save vs. spell for one day";
-                    tre.GP = 2500;
+                    Treasure.Name = "Magic Elixir";
+                    Treasure.Stat = "+2 save vs. spell for one day";
+                    Treasure.GP = 2500;
                 }
                 else if (p <= 77)
                 {
-                    tre.Name = "Psionic Elixir";
-                    tre.Stat = "+2 save vs. mind-influencing effects for one day";
-                    tre.GP = 2500;
+                    Treasure.Name = "Psionic Elixir";
+                    Treasure.Stat = "+2 save vs. mind-influencing effects for one day";
+                    Treasure.GP = 2500;
                 }
                 else if (p <= 78)
                 {
-                    tre.Name = "Posion Elixir";
-                    tre.Stat = "+2 save vs. posion for one day";
-                    tre.GP = 2500;
+                    Treasure.Name = "Posion Elixir";
+                    Treasure.Stat = "+2 save vs. posion for one day";
+                    Treasure.GP = 2500;
                 }
                 else if (p <= 79)
                 {
-                    tre.Name = "Energy Elixir";
-                    tre.Stat = "+2 all saves for one day";
-                    tre.GP = 2500;
+                    Treasure.Name = "Energy Elixir";
+                    Treasure.Stat = "+2 all saves for one day";
+                    Treasure.GP = 2500;
                 }
                 else if (p <= 80)
                 {
-                    tre.Name = "Accuracy Elixir";
-                    tre.Stat = "+2 attack for one day";
-                    tre.GP = 2500;
+                    Treasure.Name = "Accuracy Elixir";
+                    Treasure.Stat = "+2 attack for one day";
+                    Treasure.GP = 2500;
                 }
                 else if (p <= 81)
                 {
-                    tre.Name = "Damage Elixir";
-                    tre.Stat = "+2 damage for one day";
-                    tre.GP = 2500;
+                    Treasure.Name = "Damage Elixir";
+                    Treasure.Stat = "+2 damage for one day";
+                    Treasure.GP = 2500;
                 }
                 else if (p <= 82)
                 {
-                    tre.Name = "Defense Elixir";
-                    tre.Stat = "+1 AC for one day";
-                    tre.GP = 2500;
+                    Treasure.Name = "Defense Elixir";
+                    Treasure.Stat = "+1 AC for one day";
+                    Treasure.GP = 2500;
                 }
                 else if (p <= 83)
                 {
-                    tre.Name = "Life Elixir";
-                    tre.Stat = "+5 to maximum hit points for one day";
-                    tre.GP = 2500;
+                    Treasure.Name = "Life Elixir";
+                    Treasure.Stat = "+5 to maximum hit points for one day";
+                    Treasure.GP = 2500;
                 }
                 else if (p <= 84)
                 {
-                    tre.Name = "Power Elixir";
-                    tre.Stat = "+0 1st-level spell slot (spellcaster only) for one day";
-                    tre.GP = 2500;
+                    Treasure.Name = "Power Elixir";
+                    Treasure.Stat = "+0 1st-level spell slot (spellcaster only) for one day";
+                    Treasure.GP = 2500;
                 }
                 else if (p <= 85)
                 {
                     OOR = smallItems.OilOrResin();
                     if (OOR)
                     {
-                        tre.Name = "Accuracy Resin";
-                        tre.Stat = "+2 attack for 10 arrows for 10 minutes";
-                        tre.GP = 1000;
+                        Treasure.Name = "Accuracy Resin";
+                        Treasure.Stat = "+2 attack for 10 arrows for 10 minutes";
+                        Treasure.GP = 1000;
                     }
-                    tre.Name = "Accuracy Oil";
-                    tre.Stat = "+2 attack for 1 weapon for 10 minutes";
-                    tre.GP = 1000;
+                    Treasure.Name = "Accuracy Oil";
+                    Treasure.Stat = "+2 attack for 1 weapon for 10 minutes";
+                    Treasure.GP = 1000;
                 }
                 else if (p <= 86)
                 {
                     OOR = smallItems.OilOrResin();
                     if (OOR)
                     {
-                        tre.Name = "Precision Resin";
-                        tre.Stat = "+3 attack for 10 arrows for 10 minutes";
-                        tre.GP = 1500;
+                        Treasure.Name = "Precision Resin";
+                        Treasure.Stat = "+3 attack for 10 arrows for 10 minutes";
+                        Treasure.GP = 1500;
                     }
-                    tre.Name = "Precision Oil";
-                    tre.Stat = "+3 attack for 1 weapon for 10 minutes";
-                    tre.GP = 1500;
+                    Treasure.Name = "Precision Oil";
+                    Treasure.Stat = "+3 attack for 1 weapon for 10 minutes";
+                    Treasure.GP = 1500;
                 }
                 else if (p <= 87)
                 {
                     OOR = smallItems.OilOrResin();
                     if (OOR)
                     {
-                        tre.Name = "Mastery Resin";
-                        tre.Stat = "+4 attack for 10 arrows for 10 minutes";
-                        tre.GP = 2000;
+                        Treasure.Name = "Mastery Resin";
+                        Treasure.Stat = "+4 attack for 10 arrows for 10 minutes";
+                        Treasure.GP = 2000;
                     }
-                    tre.Name = "Mastery Oil";
-                    tre.Stat = "+4 attack for 1 weapon for 10 minutes";
-                    tre.GP = 2000;
+                    Treasure.Name = "Mastery Oil";
+                    Treasure.Stat = "+4 attack for 1 weapon for 10 minutes";
+                    Treasure.GP = 2000;
                 }
                 else if (p <= 88)
                 {
                     OOR = smallItems.OilOrResin();
                     if (OOR)
                     {
-                        tre.Name = "Sharpness Resin";
-                        tre.Stat = "+2 damage for 10 arrows for 10 minutes";
-                        tre.GP = 1000;
+                        Treasure.Name = "Sharpness Resin";
+                        Treasure.Stat = "+2 damage for 10 arrows for 10 minutes";
+                        Treasure.GP = 1000;
                     }
-                    tre.Name = "Sharpness Oil";
-                    tre.Stat = "+2 damage for 1 weapon for 10 minutes";
-                    tre.GP = 1000;
+                    Treasure.Name = "Sharpness Oil";
+                    Treasure.Stat = "+2 damage for 1 weapon for 10 minutes";
+                    Treasure.GP = 1000;
                 }
                 else if (p <= 89)
                 {
                     OOR = smallItems.OilOrResin();
                     if (OOR)
                     {
-                        tre.Name = "Pain Resin";
-                        tre.Stat = "+3 damage for 10 arrows for 10 minutes";
-                        tre.GP = 1500;
+                        Treasure.Name = "Pain Resin";
+                        Treasure.Stat = "+3 damage for 10 arrows for 10 minutes";
+                        Treasure.GP = 1500;
                     }
-                    tre.Name = "Pain Oil";
-                    tre.Stat = "+3 damage for 1 weapon for 10 minutes";
-                    tre.GP = 1500;
+                    Treasure.Name = "Pain Oil";
+                    Treasure.Stat = "+3 damage for 1 weapon for 10 minutes";
+                    Treasure.GP = 1500;
                 }
                 else if (p <= 90)
                 {
                     OOR = smallItems.OilOrResin();
                     if (OOR)
                     {
-                        tre.Name = "Savagery Resin";
-                        tre.Stat = "+4 damage for 10 arrows for 10 minutes";
-                        tre.GP = 2000;
+                        Treasure.Name = "Savagery Resin";
+                        Treasure.Stat = "+4 damage for 10 arrows for 10 minutes";
+                        Treasure.GP = 2000;
                     }
-                    tre.Name = "Savagery Oil";
-                    tre.Stat = "+4 damage for 1 weapon for 10 minutes";
-                    tre.GP = 2000;
+                    Treasure.Name = "Savagery Oil";
+                    Treasure.Stat = "+4 damage for 1 weapon for 10 minutes";
+                    Treasure.GP = 2000;
                 }
                 else if (p <= 91)
                 {
                     OOR = smallItems.OilOrResin();
                     if (OOR)
                     {
-                        tre.Name = "Death Resin";
-                        tre.Stat = "+5 damage for 10 arrows for 10 minutes";
-                        tre.GP = 2000;
+                        Treasure.Name = "Death Resin";
+                        Treasure.Stat = "+5 damage for 10 arrows for 10 minutes";
+                        Treasure.GP = 2000;
                     }
-                    tre.Name = "Death Oil";
-                    tre.Stat = "+5 damage for 1 weapon for 10 minutes";
-                    tre.GP = 2500;
+                    Treasure.Name = "Death Oil";
+                    Treasure.Stat = "+5 damage for 1 weapon for 10 minutes";
+                    Treasure.GP = 2500;
                 }
                 else if (p <= 92)
                 {
-                    tre.Name = "Hardening Oil";
-                    tre.Stat = "anointed weapon give +2 AC for 10 minutes";
-                    tre.GP = 1000;
+                    Treasure.Name = "Hardening Oil";
+                    Treasure.Stat = "anointed weapon give +2 AC for 10 minutes";
+                    Treasure.GP = 1000;
                 }
                 else if (p <= 93)
                 {
-                    tre.Name = "Imperviousness Oil";
-                    tre.Stat = "anointed weapon give +3 AC for 10 minutes";
-                    tre.GP = 1500;
+                    Treasure.Name = "Imperviousness Oil";
+                    Treasure.Stat = "anointed weapon give +3 AC for 10 minutes";
+                    Treasure.GP = 1500;
                 }
                 else if (p <= 94)
                 {
-                    tre.Name = "Immunity Oil";
-                    tre.Stat = "anointed weapon give +4 AC for 10 minutes";
-                    tre.GP = 2000;
+                    Treasure.Name = "Immunity Oil";
+                    Treasure.Stat = "anointed weapon give +4 AC for 10 minutes";
+                    Treasure.GP = 2000;
                 }
                 else if (p <= 95)
                 {
-                    tre.Name = "Skill Oil";
-                    tre.Stat = "Gains proficienct for this weapon for 10 minutes";
-                    tre.GP = 1000;
+                    Treasure.Name = "Skill Oil";
+                    Treasure.Stat = "Gains proficienct for this weapon for 10 minutes";
+                    Treasure.GP = 1000;
                 }
                 else if (p <= 96)
                 {
-                    tre.Name = "Fortitude Oil";
-                    tre.Stat = "Repairs all damage for one item";
-                    tre.GP = 1000;
+                    Treasure.Name = "Fortitude Oil";
+                    Treasure.Stat = "Repairs all damage for one item";
+                    Treasure.GP = 1000;
                 }
                 else if (p <= 97)
                 {
-                    tre.Name = "Blacksmith's Oil";
-                    tre.Stat = "Item gains +5 hardness for 10 minutes";
-                    tre.GP = 1500;
+                    Treasure.Name = "Blacksmith's Oil";
+                    Treasure.Stat = "Item gains +5 hardness for 10 minutes";
+                    Treasure.GP = 1500;
                 }
                 else if (p <= 98)
                 {
-                    tre.Name = "Permanence Oil";
-                    tre.Stat = "Weapon becomes indestructible for one day";
-                    tre.GP = 3000;
+                    Treasure.Name = "Permanence Oil";
+                    Treasure.Stat = "Weapon becomes indestructible for one day";
+                    Treasure.GP = 3000;
                 }
                 else if (p <= 99)
                 {
-                    tre.Name = "Enchantment Oil";
-                    tre.Stat = "Weapon type permantly changed (roll 1d20+40 on Base Item table)";
-                    tre.GP = 3500;
+                    Treasure.Name = "Enchantment Oil";
+                    Treasure.Stat = "Weapon type permantly changed (roll 1d20+40 on Base Item table)";
+                    Treasure.GP = 3500;
                 }
                 else if (p <= 100)
                 {
@@ -1611,7 +1638,7 @@ namespace BaseItem
                         get1 = Item(99, "perishable", CR);
                         get2 = Item(99, "perishable", CR);
                         string stat = $"{get1.Stat} and {get2.Stat}";
-                        tre.Stat = stat;
+                        Treasure.Stat = stat;
                     }
                     else
                     {
@@ -1620,92 +1647,92 @@ namespace BaseItem
                         {
                             if (part == 1)
                             {
-                                tre.Name = "Heart";
+                                Treasure.Name = "Heart";
                             }
                             if (part == 2)
                             {
-                                tre.Name = "Brain";
+                                Treasure.Name = "Brain";
                             }
                             if (part == 3)
                             {
-                                tre.Name = "Jawbone";
+                                Treasure.Name = "Jawbone";
                             }
                             if (part == 4)
                             {
-                                tre.Name = "Eye";
+                                Treasure.Name = "Eye";
                             }
                             if (part == 5)
                             {
-                                tre.Name = "Ear";
+                                Treasure.Name = "Ear";
                             }
                             if (part == 6)
                             {
-                                tre.Name = "Horn";
+                                Treasure.Name = "Horn";
                             }
                             if (part == 7)
                             {
-                                tre.Name = "Tail";
+                                Treasure.Name = "Tail";
                             }
                             if (part == 8)
                             {
-                                tre.Name = "Fang";
+                                Treasure.Name = "Fang";
                             }
                             if (part == 9)
                             {
-                                tre.Name = "Quill";
+                                Treasure.Name = "Quill";
                             }
                             if (part == 10)
                             {
-                                tre.Name = "Scalp";
+                                Treasure.Name = "Scalp";
                             }
                             if (part == 11)
                             {
-                                tre.Name = "Spleen";
+                                Treasure.Name = "Spleen";
                             }
                             if (part == 12)
                             {
-                                tre.Name = "Soul";
+                                Treasure.Name = "Soul";
                             }
                         }
                         item get = new item();
                         get = Item(99, "perishable", CR);
-                        tre.Stat = get.Stat;
-                        tre.GP = 0;
+                        Treasure.Stat = get.Stat;
+                        Treasure.GP = 0;
                     }
                 }
-                Prefix = -1;
-                Suffix = -1;
-            }
+                Prefix_Dice =  -1;
+                Suffix_Dice = -1;
+            } //Perishables
             if (!(q == "none") && !(q == "perishable"))
             {
                 pre pre = new pre();
                 suf suf = new suf();
                 if (q == "Prefix")
                 {
-                    pre = prefix.Prefixes(Prefix, CR);
+                    pre = prefix.Prefixes(Prefix_Dice, Prefix_Mod, CR);
                 }
                 if (q == "Suffix")
                 {
-                    suf = suffix.Suffixes(Suffix, CR);
+                    suf = suffix.Suffixes(Suffix_Dice, Suffix_Mod, CR);
                 }
                 if (q == "PrefixNSuffix")
                 {
-                    pre = prefix.Prefixes(Prefix, CR);
-                    suf = suffix.Suffixes(Suffix, CR);
+                    pre = prefix.Prefixes(Prefix_Dice, Prefix_Mod, CR);
+                    suf = suffix.Suffixes(Suffix_Dice, Suffix_Mod, CR);
                 }
-                tre.PrefixName = pre.PrefixName;
-                tre.PrefixStat = pre.PrefixStat;
-                tre.PrefixGP = pre.PrefixGP;
-                tre.rolls.AddRange(pre.rolls);
+                Treasure.PrefixName = pre.PrefixName;
+                Treasure.PrefixStat = pre.PrefixStat;
+                Treasure.PrefixGP = pre.PrefixGP;
+                Treasure.rolls.AddRange(pre.rolls);
 
-                tre.SuffixName = suf.SuffixName;
-                tre.SuffixStat = suf.SuffixStat;
-                tre.SuffixGP = suf.SuffixGP;
-                tre.rolls.AddRange(suf.rolls);
+                Treasure.SuffixName = suf.SuffixName;
+                Treasure.SuffixStat = suf.SuffixStat;
+                Treasure.SuffixGP = suf.SuffixGP;
+                Treasure.rolls.AddRange(suf.rolls);
             }
 
-            tre.rolls = Dice.rolls;
-            return tre;
+            Treasure.rolls = Dice.rolls;
+            return Treasure;
         }
     }
 }

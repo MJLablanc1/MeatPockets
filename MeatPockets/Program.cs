@@ -25,16 +25,16 @@ void Intial()
 }
 
 void RollsToString()
-        {
-            string RTS = "";
-            foreach (var roll in Dice.rolls)
-            {
-                RTS += roll.ToString() + ", ";
-            }
-            RTS = RTS.Substring(0, RTS.Length - 2);
-            Console.WriteLine("Dice rolls: " + RTS);
-            Dice.rolls.Clear();
-        }
+{
+    string RTS = "";
+    foreach (var roll in Dice.rolls)
+    {
+        RTS += roll.ToString() + ", ";
+    }
+    RTS = RTS.Substring(0, RTS.Length - 2);
+    Console.WriteLine("Dice rolls: " + RTS);
+    Dice.rolls.Clear();
+}
 //Main
 do
 {
@@ -100,7 +100,7 @@ do
         int i = Dice.D(20) + CR;
         if (i < 16)
         {
-           tre = Item(Dice.D(60), "none", CR);
+            tre = Item(Dice.D(60), "none", CR);
         }
         if (i > 15 && i < 18)
         {
@@ -115,10 +115,11 @@ do
             tre = Item(Dice.D(100), "PrefixNSuffix", CR);
         }
 
+        //Display Text
+        //still need prefix and suffix descriptions
         tre.GP = tre.GP + tre.SuffixGP + tre.PrefixGP;
         if (tre.Each)
         {
-
             Console.WriteLine($"{tre.Name}, {tre.Stat}, Worth {tre.GP * tre.Amount} GP ({tre.GP} each)");
         }
         else
