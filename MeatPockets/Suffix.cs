@@ -13,11 +13,60 @@ namespace Suffix
             {
                 //Reduces damage taken
                 int reduce = Dice.D(20) + CR;
+                if (reduce <= 11)
+                {
+                    suf.SuffixName = "of Health";
+                    suf.SuffixStat = "-1 point of damage taken from each attack";
+                    suf.SuffixGP = 2500;
+                }
+                else if (reduce <= 17)
+                {
+                    suf.SuffixName = "of Protection";
+                    suf.SuffixStat = "-2 point of damage taken from each attack";
+                    suf.SuffixGP = 5000;
+                }
+                else if (reduce <= 22)
+                {
+                    suf.SuffixName = "of Absorption";
+                    suf.SuffixStat = "-3 point of damage taken from each attack";
+                    suf.SuffixGP = 7500;
+                }
+                else if (reduce <= 26)
+                {
+                    suf.SuffixName = "of Life";
+                    suf.SuffixStat = "-4 point of damage taken from each attack";
+                    suf.SuffixGP = 10000;
+                }
+                else if (reduce > 26)
+                {
+                    suf.SuffixName = "of Deflection";
+                    suf.SuffixStat = "-5 point of damage taken from each attack";
+                    suf.SuffixGP = 12500;
+                }
 
             } //Reduces damage taken
             else if (Suffix_Roll <= 25)
             {
                 //Has an effect when attacked
+                int effect = Dice.D(20) + CR;
+                if (effect <= 10)
+                {
+                    suf.SuffixName = "of Thorns";
+                    suf.SuffixStat = "Successful melee attacks againt the wearer deal 1d4 points of damage to the attacker";
+                    suf.SuffixGP = 5000;
+                }
+                else if (effect <= 18)
+                {
+                    suf.SuffixName = "of Spikes";
+                    suf.SuffixStat = "Successful melee attacks againt the wearer deal 2d4 points of damage to the attacker";
+                    suf.SuffixGP = 7500;
+                }
+                else if (effect > 18)
+                {
+                    suf.SuffixName = "of Blocking";
+                    suf.SuffixStat = "+2 AC when attacking; +4 AC when not attacking";
+                    suf.SuffixGP = 10000;
+                }
 
             } //Has an effect when attacked
             else if (Suffix_Roll <= 27)
