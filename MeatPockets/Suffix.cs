@@ -72,6 +72,24 @@ namespace Suffix
             else if (Suffix_Roll <= 27)
             {
                 //Improved durability
+                int durability = Dice.D(20) + CR;
+                if (durability <= 10)
+                {
+
+                    suf.SuffixName = "of Sturdness";
+                    suf.SuffixStat = "Items gain +3 hardness, +6";
+                    suf.SuffixGP = 2500;
+
+                }
+                else if (durability <= 14)
+                {
+
+                    suf.SuffixName = "of Structures";
+                    suf.SuffixStat = "Items gain +5 hardness, +12";
+                    suf.SuffixGP = 5000;
+
+                }
+                
 
             } //Improved durability
             else if (Suffix_Roll <= 30)

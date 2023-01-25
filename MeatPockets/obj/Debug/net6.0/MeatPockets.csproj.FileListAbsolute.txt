@@ -13,3 +13,6 @@ C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\obj\Debug\net6.0\refint\MeatP
 C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\obj\Debug\net6.0\MeatPockets.pdb
 C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\obj\Debug\net6.0\MeatPockets.genruntimeconfig.cache
 C:\Users\madmi\Desktop\WLD\MeatPockets\MeatPockets\obj\Debug\net6.0\ref\MeatPockets.dll
+C:\Users\madmi\OneDrive\Desktop\WLD Project\MeatPockets\MeatPockets\obj\Debug\net6.0\MeatPockets.dll
+C:\Users\madmi\OneDrive\Desktop\WLD Project\MeatPockets\MeatPockets\obj\Debug\net6.0\refint\MeatPockets.dll
+C:\Users\madmi\OneDrive\Desktop\WLD Project\MeatPockets\MeatPockets\obj\Debug\net6.0\MeatPockets.pdb
