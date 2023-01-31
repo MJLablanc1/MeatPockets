@@ -9,6 +9,7 @@ using pretext;
 int CR = 0;
 int level = 0;
 string input = "x";
+
 DiceRoll Dice = new DiceRoll();
 
 Intial();
@@ -38,6 +39,7 @@ void RollsToString()
 //Main
 do
 {
+    bool noTreasure = false;
     item tre = new item();
 
     //Base Treasure
@@ -75,58 +77,107 @@ do
             }
 
         }
-    }
+    } //Trap
     if (b > 1 && b < 11)
     {
-        Console.WriteLine("No Treasure");
-    }
+        Console.WriteLine("no treasure");
+        noTreasure = true;
+
+    } // No Treasure
     if (b == 11)
     {
         //Healing Potion -------------------------------------------------------------------------------------------------------------------------------------------------------------------
         smallItems.HealingPotion(CR);
-    }
+        noTreasure = true;
+
+    } //Healing Potion
     if (b == 12)
     {
         //Mana Potion -------------------------------------------------------------------------------------------------------------------------------------------------------------------
         smallItems.ManaPotion(CR);
-    }
+        noTreasure = true;
+
+    } //Mana Potion
     if (b > 12 && b < 18)
     {
         Console.WriteLine($"{Dice.D(20) * CR + level * 25} Gold");
-    }
+        noTreasure = true;
+
+    } //Gold
     if (b > 17)
     {
+        tre = new item();
         //Item -------------------------------------------------------------------------------------------------------------------------------------------------------------------
         int i = Dice.D(20) + CR;
         if (i < 16)
         {
-            tre = Item(Dice.D(60), "none", CR);
+            tre = Item(65, "n", CR);            
         }
         if (i > 15 && i < 18)
         {
-            tre = Item(Dice.D(100), "Prefix", CR);
+            tre = Item(100, "P", CR);
         }
         if (i > 17 && i < 20)
         {
-            tre = Item(Dice.D(100), "Suffix", CR);
+            tre = Item(100, "S", CR);
         }
         if (i > 19)
         {
-            tre = Item(Dice.D(100), "PrefixNSuffix", CR);
-        }
+            tre = Item(100, "PNS", CR);
+        }        
+    } //Item
 
-        //Display Text
-        //still need prefix and suffix descriptions
+    //Display Text    
+    if (!noTreasure)
+    {
         tre.GP = tre.GP + tre.SuffixGP + tre.PrefixGP;
-        if (tre.Each)
+        if (tre.PrefixName == "no prefix" && tre.SuffixName == "no suffix")
         {
-            Console.WriteLine($"{tre.Name}, {tre.Stat}, Worth {tre.GP * tre.Amount} GP ({tre.GP} each)");
+            if (tre.Each)
+            {
+                Console.WriteLine($"{tre.Name}, {tre.Stat}, Worth {tre.GP * tre.Amount} GP ({tre.GP} each)");
+            }
+            else
+            {
+                Console.WriteLine($"{tre.Name}, {tre.Stat}, Worth {tre.GP} GP");
+            }
         }
-        else
+        else if (!(tre.PrefixName == "no prefix") && tre.SuffixName == "no suffix")
         {
-            Console.WriteLine($"{tre.Name}, {tre.Stat}, Worth {tre.GP} GP");
+            if (tre.Each)
+            {
+                Console.WriteLine($"{tre.PrefixName} {tre.Name}, {tre.Stat} and {tre.PrefixStat}, Worth {tre.GP * tre.Amount} GP ({tre.GP} each)");
+            }
+            else
+            {
+                Console.WriteLine($"{tre.PrefixName} {tre.Name}, {tre.Stat} and {tre.PrefixStat}, Worth {tre.GP} GP");
+            }
+        }
+        else if (tre.PrefixName == "no prefix" && !(tre.SuffixName == "no suffix"))
+        {
+            if (tre.Each)
+            {
+                Console.WriteLine($"{tre.Name} {tre.SuffixName} , {tre.Stat} and {tre.SuffixStat}, Worth {tre.GP * tre.Amount} GP ({tre.GP} each)");
+            }
+            else
+            {
+                Console.WriteLine($"{tre.Name} {tre.SuffixName} , {tre.Stat} and {tre.SuffixStat}, Worth {tre.GP} GP");
+            }
+        }
+        else if (!(tre.PrefixName == "no prefix") && !(tre.SuffixName == "no suffix"))
+        {
+            if (tre.Each)
+            {
+                Console.WriteLine($"{tre.PrefixName} {tre.Name} {tre.SuffixName} , {tre.Stat} and {tre.PrefixStat} and {tre.SuffixStat}, Worth {tre.GP * tre.Amount} GP ({tre.GP} each)");
+            }
+            else
+            {
+                Console.WriteLine($"{tre.PrefixName} {tre.Name} {tre.SuffixName} , {tre.Stat} and {tre.PrefixStat} and {tre.SuffixStat}, Worth {tre.GP} GP");
+            }
         }
     }
+    
+    
 
     Dice.rolls.AddRange(tre.rolls);
 

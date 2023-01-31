@@ -7,9 +7,13 @@ namespace Prefix
         public static DiceRoll Dice = new DiceRoll();
         public static pre Prefixes(int Prefix_Dice,int Prefix_Mod, int CR)
         {
-
-            int Prefix_Roll = 0;
             pre pre = new pre();
+            if (Prefix_Dice == -1)
+            {
+                return pre;
+            }
+            int Prefix_Roll = Dice.D(Prefix_Dice) + Prefix_Mod;
+            
             if (Prefix_Roll <= 20)
             {                
                 //Improves Armor Class

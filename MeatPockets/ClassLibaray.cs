@@ -7,8 +7,27 @@ namespace ClassLibaray
         Random Dice = new Random();
         public int D(int N)
         {
-            int r = Dice.Next(N) + 1;
-            rolls.Add(r);
+            int r = 0;
+            if (N == -1)
+            {
+                Console.WriteLine("skipped a die roll");
+            }
+            else
+            {
+                r = Dice.Next(N) + 1;
+                rolls.Add(r);
+            }            
+            return r;
+        }
+
+        public int D(int D, int N)
+        {
+            int r = 0;
+            for (int i = 0; i < D; i++)
+            {
+                r += Dice.Next(N) + 1;
+                rolls.Add(r);
+            }            
             return r;
         }
     }

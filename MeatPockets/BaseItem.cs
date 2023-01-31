@@ -8,7 +8,7 @@ namespace BaseItem
     public class baseItem
     {
 
-        public static item Item(int Item_Roll, string q, int CR)
+        public static item Item(int Item_PreRoll, string PreffixOrSuffix, int CR)
         {
             int Prefix_Dice = 0;
             int Prefix_Mod = 0;
@@ -16,6 +16,7 @@ namespace BaseItem
             int Suffix_Mod = 0;
             item Treasure = new item();
             DiceRoll Dice = new DiceRoll();
+            int Item_Roll = Dice.D(Item_PreRoll);
 
             if (Item_Roll < 8)
             {
@@ -131,7 +132,7 @@ namespace BaseItem
                     Treasure.GP = 5000;
                 }
                 Prefix_Dice = 60;
-                Suffix_Dice =60;
+                Suffix_Dice = 60;
             }                //Body Armor
             if (Item_Roll > 8 && Item_Roll < 14)
             {
@@ -362,7 +363,7 @@ namespace BaseItem
                 int d = Dice.D(20) + CR;
                 if (d <= 10)
                 {
-                    int a = Dice.D(6) + Dice.D(6);
+                    int a = Dice.D(2,6);
                     Treasure.Name = $"{a} Throwing Knifes";
                     Treasure.Stat = "1d3, crit 19-20/x2, 1 lb., Small, Piercing";
                     Treasure.GP = 2;
@@ -389,7 +390,7 @@ namespace BaseItem
                 }
                 else if (d <= 32)
                 {
-                    int a = Dice.D(6) + Dice.D(6);
+                    int a = Dice.D(2,6);
                     Treasure.Name = $"{a} Balanced Knife";
                     Treasure.Stat = "1d4, crit 19-20/x2, 1 lb., Small, Piercing";
                     Treasure.GP = 3;
@@ -581,7 +582,7 @@ namespace BaseItem
                 int Spear = Dice.D(20) + CR;
                 if (Spear <= 7)
                 {
-                    int a = Dice.D(4) + Dice.D(4);
+                    int a = Dice.D(2,4);
                     Treasure.Name = $"{a} Light Javelin";
                     Treasure.Stat = "1d4, crit x2, Range 30 ft., 1 lb., Medium, Piercing";
                     Treasure.GP = 2;
@@ -602,7 +603,7 @@ namespace BaseItem
                 }
                 else if (Spear <= 17)
                 {
-                    int a = Dice.D(4) + Dice.D(4);
+                    int a = Dice.D(2,4);
                     Treasure.Name = $"{a} Pilum";
                     Treasure.Stat = "1d6, crit x2, Range 20 ft., 4 lb., Medium, Piercing";
                     Treasure.GP = 3;
@@ -617,7 +618,7 @@ namespace BaseItem
                 }
                 else if (Spear <= 23)
                 {
-                    int a = Dice.D(4) + Dice.D(4);
+                    int a = Dice.D(2,4);
                     Treasure.Name = $"{a} Light Glaives";
                     Treasure.Stat = "1d8, crit x2, Range 10 ft., 4 lb., Medium, Piercing";
                     Treasure.GP = 4;
@@ -632,7 +633,7 @@ namespace BaseItem
                 }
                 else if (Spear <= 29)
                 {
-                    int a = Dice.D(4) + Dice.D(4);
+                    int a = Dice.D(2,4);
                     Treasure.Name = $"{a} Throwing Spears";
                     Treasure.Stat = "1d8, crit x2, Range 30 ft., 3 lb., Medium, Piercing";
                     Treasure.GP = 5;
@@ -815,7 +816,7 @@ namespace BaseItem
                 }
                 else if (Bow <= 20)
                 {
-                    int a = Dice.D(8) + Dice.D(8) + Dice.D(8) + Dice.D(8);
+                    int a = Dice.D(4,8);
                     Treasure.Name = $"{a} Arrows";
                     Treasure.Stat = "Damage as per bow";
                     Treasure.GP = 1;
@@ -864,7 +865,7 @@ namespace BaseItem
 
                 if (Crossbow <= 5)
                 {
-                    int a = Dice.D(6) + Dice.D(6) + Dice.D(6);
+                    int a = Dice.D(3,6);
                     Treasure.Name = $"{a} Bolts";
                     Treasure.Stat = "Damage as per crossbow";
                     Treasure.GP = 1;
@@ -879,7 +880,7 @@ namespace BaseItem
                 }
                 else if (Crossbow <= 22)
                 {
-                    int a = Dice.D(6) + Dice.D(6) + Dice.D(6);
+                    int a = Dice.D(3,6);
                     Treasure.Name = $"{a} Bolts";
                     Treasure.Stat = "Damage as per crossbow";
                     Treasure.GP = 1;
@@ -894,7 +895,7 @@ namespace BaseItem
                 }
                 else if (Crossbow <= 33)
                 {
-                    int a = Dice.D(6) + Dice.D(6) + Dice.D(6);
+                    int a = Dice.D(3,6);
                     Treasure.Name = $"{a} Bolts";
                     Treasure.Stat = "Damage as per crossbow";
                     Treasure.GP = 1;
@@ -1631,7 +1632,7 @@ namespace BaseItem
                 }
                 else if (p <= 100)
                 {
-                    if (q == "perishable")
+                    if (PreffixOrSuffix == "perishable")
                     {
                         item get1 = new item();
                         item get2 = new item();
@@ -1703,19 +1704,19 @@ namespace BaseItem
                 Prefix_Dice =  -1;
                 Suffix_Dice = -1;
             } //Perishables
-            if (!(q == "none") && !(q == "perishable"))
+            if (!(PreffixOrSuffix == "n") && !(PreffixOrSuffix == "perishable"))
             {
                 pre pre = new pre();
                 suf suf = new suf();
-                if (q == "Prefix")
+                if (PreffixOrSuffix == "P")
                 {
                     pre = prefix.Prefixes(Prefix_Dice, Prefix_Mod, CR);
                 }
-                if (q == "Suffix")
+                if (PreffixOrSuffix == "S")
                 {
                     suf = suffix.Suffixes(Suffix_Dice, Suffix_Mod, CR);
                 }
-                if (q == "PrefixNSuffix")
+                if (PreffixOrSuffix == "PNS")
                 {
                     pre = prefix.Prefixes(Prefix_Dice, Prefix_Mod, CR);
                     suf = suffix.Suffixes(Suffix_Dice, Suffix_Mod, CR);
