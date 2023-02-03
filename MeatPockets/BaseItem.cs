@@ -367,7 +367,6 @@ namespace BaseItem
                     Treasure.Name = $"{a} Throwing Knifes";
                     Treasure.Stat = "1d3, crit 19-20/x2, 1 lb., Small, Piercing";
                     Treasure.GP = 2;
-                    Treasure.Each = true;
                     Treasure.Amount = a;
                 }
                 else if (d <= 15)
@@ -394,7 +393,6 @@ namespace BaseItem
                     Treasure.Name = $"{a} Balanced Knife";
                     Treasure.Stat = "1d4, crit 19-20/x2, 1 lb., Small, Piercing";
                     Treasure.GP = 3;
-                    Treasure.Each = true;
                     Treasure.Amount = a;
                 }
                 else if (d >= 33)
@@ -586,7 +584,6 @@ namespace BaseItem
                     Treasure.Name = $"{a} Light Javelin";
                     Treasure.Stat = "1d4, crit x2, Range 30 ft., 1 lb., Medium, Piercing";
                     Treasure.GP = 2;
-                    Treasure.Each = true;
                     Treasure.Amount = a;
                 }
                 else if (Spear <= 10)
@@ -607,7 +604,6 @@ namespace BaseItem
                     Treasure.Name = $"{a} Pilum";
                     Treasure.Stat = "1d6, crit x2, Range 20 ft., 4 lb., Medium, Piercing";
                     Treasure.GP = 3;
-                    Treasure.Each = true;
                     Treasure.Amount = a;
                 }
                 else if (Spear <= 20)
@@ -622,7 +618,6 @@ namespace BaseItem
                     Treasure.Name = $"{a} Light Glaives";
                     Treasure.Stat = "1d8, crit x2, Range 10 ft., 4 lb., Medium, Piercing";
                     Treasure.GP = 4;
-                    Treasure.Each = true;
                     Treasure.Amount = a;
                 }
                 else if (Spear <= 26)
@@ -637,7 +632,6 @@ namespace BaseItem
                     Treasure.Name = $"{a} Throwing Spears";
                     Treasure.Stat = "1d8, crit x2, Range 30 ft., 3 lb., Medium, Piercing";
                     Treasure.GP = 5;
-                    Treasure.Each = true;
                     Treasure.Amount = a;
                 }
                 else if (Spear <= 32)
@@ -722,11 +716,10 @@ namespace BaseItem
                 }
                 else if (Axe <= 12)
                 {
-                    int a = Dice.D(4) + Dice.D(4);
+                    int a = Dice.D(2, 4);
                     Treasure.Name = $"{a} Light Throwing Axes";
                     Treasure.Stat = "1d4, crit x2, Range 10 ft., 2 lb., Small, Piercing";
                     Treasure.GP = 3;
-                    Treasure.Each = true;
                     Treasure.Amount = a;
                 }
                 else if (Axe <= 16)
@@ -761,11 +754,10 @@ namespace BaseItem
                 }
                 else if (Axe <= 29)
                 {
-                    int a = Dice.D(4) + Dice.D(4);
+                    int a = Dice.D(2, 4);
                     Treasure.Name = $"{a} Balanced Throwing Axes";
                     Treasure.Stat = "1d6, crit x2, Range 10 ft., 4 lb., Medium, Piercing";
                     Treasure.GP = 4;
-                    Treasure.Each = true;
                     Treasure.Amount = a;
                 }
                 else if (Axe <= 33)
@@ -820,7 +812,6 @@ namespace BaseItem
                     Treasure.Name = $"{a} Arrows";
                     Treasure.Stat = "Damage as per bow";
                     Treasure.GP = 1;
-                    Treasure.Each = true;
                     Treasure.Amount = a;
                 }
                 else if (Bow <= 23)
@@ -869,7 +860,6 @@ namespace BaseItem
                     Treasure.Name = $"{a} Bolts";
                     Treasure.Stat = "Damage as per crossbow";
                     Treasure.GP = 1;
-                    Treasure.Each = true;
                     Treasure.Amount = a;
                 }
                 else if (Crossbow <= 17)
@@ -884,7 +874,6 @@ namespace BaseItem
                     Treasure.Name = $"{a} Bolts";
                     Treasure.Stat = "Damage as per crossbow";
                     Treasure.GP = 1;
-                    Treasure.Each = true;
                     Treasure.Amount = a;
                 }
                 else if (Crossbow <= 32)
@@ -899,7 +888,6 @@ namespace BaseItem
                     Treasure.Name = $"{a} Bolts";
                     Treasure.Stat = "Damage as per crossbow";
                     Treasure.GP = 1;
-                    Treasure.Each = true;
                     Treasure.Amount = a;
                 }
                 Prefix_Dice = 60;

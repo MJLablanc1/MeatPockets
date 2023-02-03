@@ -133,7 +133,7 @@ do
         tre.GP = tre.GP + tre.SuffixGP + tre.PrefixGP;
         if (tre.PrefixName == "no prefix" && tre.SuffixName == "no suffix")
         {
-            if (tre.Each)
+            if (tre.Amount != -1)
             {
                 Console.WriteLine($"{tre.Name}, {tre.Stat}, Worth {tre.GP * tre.Amount} GP ({tre.GP} each)");
             }
@@ -144,7 +144,7 @@ do
         }
         else if (!(tre.PrefixName == "no prefix") && tre.SuffixName == "no suffix")
         {
-            if (tre.Each)
+            if (tre.Amount != -1)
             {
                 Console.WriteLine($"{tre.PrefixName} {tre.Name}, {tre.Stat} and {tre.PrefixStat}, Worth {tre.GP * tre.Amount} GP ({tre.GP} each)");
             }
@@ -155,7 +155,7 @@ do
         }
         else if (tre.PrefixName == "no prefix" && !(tre.SuffixName == "no suffix"))
         {
-            if (tre.Each)
+            if (tre.Amount != -1)
             {
                 Console.WriteLine($"{tre.Name} {tre.SuffixName} , {tre.Stat} and {tre.SuffixStat}, Worth {tre.GP * tre.Amount} GP ({tre.GP} each)");
             }
@@ -166,7 +166,7 @@ do
         }
         else if (!(tre.PrefixName == "no prefix") && !(tre.SuffixName == "no suffix"))
         {
-            if (tre.Each)
+            if (tre.Amount != -1)
             {
                 Console.WriteLine($"{tre.PrefixName} {tre.Name} {tre.SuffixName} , {tre.Stat} and {tre.PrefixStat} and {tre.SuffixStat}, Worth {tre.GP * tre.Amount} GP ({tre.GP} each)");
             }

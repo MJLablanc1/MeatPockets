@@ -38,7 +38,6 @@ namespace ClassLibaray
         public string Stat = "missing stat";
         public int GP = -1;
         public int Amount = -1;
-        public bool Each = false;
 
         public string PrefixName = "no prefix";
         public string PrefixStat = "no prefix stat";
